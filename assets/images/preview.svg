@@ -1,0 +1,97 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 800" width="1280" height="800">
+  <defs>
+    <linearGradient id="blue2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0090FF"/>
+      <stop offset="100%" stop-color="#0066CC"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1280" height="800" fill="#F8FAFC"/>
+  <rect width="1280" height="68" fill="#FFFFFF"/>
+  <line x1="0" y1="68" x2="1280" y2="68" stroke="#E2E8F0" stroke-width="1"/>
+
+  <g transform="translate(48,20)">
+    <rect width="34" height="34" rx="10" fill="url(#blue2)"/>
+    <rect x="8" y="11" width="18" height="13" rx="2" fill="none" stroke="#FFFFFF" stroke-width="2"/>
+    <path d="M9 12 L17 18 L25 12" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <text x="100" y="44" font-family="Inter, Segoe UI, Arial" font-size="18" font-weight="800" fill="#0F172A">
+    EmailJS<tspan fill="#FF8434">Lab</tspan>
+  </text>
+
+  <rect x="0" y="68" width="1280" height="380" fill="#FFFFFF"/>
+  <circle cx="640" cy="220" r="220" fill="#E6F2FF" opacity="0.7"/>
+  <text x="640" y="180" text-anchor="middle" font-family="Inter, Segoe UI, Arial" font-size="14" font-weight="600" fill="#0052A3">
+    HTML5 Â· CSS3 Â· JavaScript vanilla Â· EmailJS
+  </text>
+  <text x="640" y="260" text-anchor="middle" font-family="Inter, Segoe UI, Arial" font-size="48" font-weight="800" fill="#0F172A">
+    MaÃ®trisez l'envoi d'emails
+  </text>
+  <text x="640" y="320" text-anchor="middle" font-family="Inter, Segoe UI, Arial" font-size="48" font-weight="800" fill="#FF8434">
+    cÃ´tÃ© client
+  </text>
+  <text x="640" y="380" text-anchor="middle" font-family="Inter, Segoe UI, Arial" font-size="18" fill="#64748B">
+    Un laboratoire pÃ©dagogique complet â€” sans backend, sans framework
+  </text>
+
+  <rect x="460" y="410" width="180" height="48" rx="10" fill="#FF8434"/>
+  <text x="550" y="440" text-anchor="middle" font-family="Inter, Segoe UI, Arial" font-size="15" font-weight="600" fill="#FFFFFF">
+    Commencer
+  </text>
+  <rect x="660" y="410" width="180" height="48" rx="10" fill="#FFFFFF" stroke="#CBD5E1"/>
+  <text x="750" y="440" text-anchor="middle" font-family="Inter, Segoe UI, Arial" font-size="15" font-weight="600" fill="#0F172A">
+    Tester le laboratoire
+  </text>
+
+  <g transform="translate(80,520)">
+    <rect width="340" height="180" rx="14" fill="#FFFFFF" stroke="#E2E8F0"/>
+    <text x="24" y="42" font-family="Inter, Segoe UI, Arial" font-size="18" font-weight="700" fill="#0F172A">
+      Introduction
+    </text>
+    <text x="24" y="78" font-family="Inter, Segoe UI, Arial" font-size="13" fill="#64748B">
+      Qu'est-ce qu'EmailJS ?
+    </text>
+    <text x="24" y="104" font-family="Inter, Segoe UI, Arial" font-size="13" fill="#64748B">
+      Ã€ quoi Ã§a sert ?
+    </text>
+    <text x="24" y="130" font-family="Inter, Segoe UI, Arial" font-size="13" fill="#64748B">
+      Comment Ã§a fonctionne ?
+    </text>
+  </g>
+
+  <g transform="translate(470,520)">
+    <rect width="340" height="180" rx="14" fill="#FFFFFF" stroke="#E2E8F0"/>
+    <text x="24" y="42" font-family="Inter, Segoe UI, Arial" font-size="18" font-weight="700" fill="#0F172A">
+      Parcours
+    </text>
+    <text x="24" y="78" font-family="Inter, Segoe UI, Arial" font-size="13" fill="#64748B">
+      10 Ã©tapes progressives
+    </text>
+    <text x="24" y="104" font-family="Inter, Segoe UI, Arial" font-size="13" fill="#64748B">
+      Chaque Ã©tape s'appuie sur
+    </text>
+    <text x="24" y="126" font-family="Inter, Segoe UI, Arial" font-size="13" fill="#64748B">
+      la prÃ©cÃ©dente.
+    </text>
+  </g>
+
+  <g transform="translate(860,520)">
+    <rect width="340" height="180" rx="14" fill="#FFFFFF" stroke="#E2E8F0"/>
+    <text x="24" y="42" font-family="Inter, Segoe UI, Arial" font-size="18" font-weight="700" fill="#0F172A">
+      Laboratoire
+    </text>
+    <text x="24" y="78" font-family="Inter, Segoe UI, Arial" font-size="13" fill="#64748B">
+      Envoyez un vrai email
+    </text>
+    <rect x="24" y="100" width="292" height="12" rx="3" fill="#F1F5F9"/>
+    <rect x="24" y="122" width="292" height="12" rx="3" fill="#F1F5F9"/>
+    <rect x="24" y="144" width="180" height="24" rx="6" fill="#FF8434"/>
+    <text x="114" y="160" text-anchor="middle" font-family="Inter, Segoe UI, Arial" font-size="11" font-weight="600" fill="#FFFFFF">
+      Envoyer
+    </text>
+  </g>
+
+  <text x="640" y="750" text-anchor="middle" font-family="Inter, Segoe UI, Arial" font-size="14" fill="#94A3B8">
+    francis-mampouya.github.io/learn_email_js
+  </text>
+</svg>

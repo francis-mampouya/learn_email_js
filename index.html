@@ -5,53 +5,159 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="EmailJS Lab — Apprenez à envoyer des emails depuis votre navigateur avec EmailJS. Tutoriel interactif, laboratoire de test, guide de dépannage et checklist de progression."
+      content="EmailJS Lab — Apprenez à envoyer des emails depuis votre navigateur avec EmailJS. Tutoriel interactif, laboratoire de test, quiz, guide de dépannage et checklist."
     />
     <meta name="author" content="Francis Mampouya" />
-    <meta name="theme-color" content="#007FFF" />
+    <meta name="theme-color" content="#FF8434" />
+    <meta
+      name="keywords"
+      content="emailjs, tutoriel, javascript, formulaire, contact, sans backend, html, css"
+    />
+
     <meta
       property="og:title"
       content="EmailJS Lab — Apprendre EmailJS pas à pas"
     />
     <meta
       property="og:description"
-      content="Laboratoire pédagogique pour maîtriser l'envoi d'emails côté client avec EmailJS, sans backend."
+      content="Laboratoire pédagogique pour maîtriser l'envoi d'emails côté client avec EmailJS."
     />
     <meta property="og:type" content="website" />
     <meta
       property="og:url"
-      content="https://github.com/francis-mampouya/learn_email_js"
+      content="https://francis-mampouya.github.io/learn_email_js"
     />
+    <meta
+      property="og:image"
+      content="https://francis-mampouya.github.io/learn_email_js/assets/og-cover.png"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="fr_FR" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="EmailJS Lab — Apprendre EmailJS pas à pas"
+    />
+    <meta
+      name="twitter:description"
+      content="Laboratoire pédagogique pour maîtriser EmailJS sans backend."
+    />
+    <meta
+      name="twitter:image"
+      content="https://francis-mampouya.github.io/learn_email_js/assets/og-cover.png"
+    />
+
     <link
       rel="canonical"
-      href="https://github.com/francis-mampouya/learn_email_js"
+      href="https://francis-mampouya.github.io/learn_email_js"
     />
     <link
       rel="icon"
-      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✉️</text></svg>"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%231D4ED8'/><path d='M7 11l9 6 9-6' stroke='white' stroke-width='2' fill='none' stroke-linecap='round' stroke-linejoin='round'/><rect x='7' y='9' width='18' height='14' rx='2' stroke='white' stroke-width='2' fill='none'/></svg>"
     />
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="apple-touch-icon" href="assets/icon-192.png" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="EmailJS Lab" />
+
     <title>EmailJS Lab — Apprendre à envoyer des emails avec EmailJS</title>
+
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
     <link rel="stylesheet" href="css/style.css" />
+
     <script>
       (function () {
         try {
           var t = localStorage.getItem("emailjsLabTheme");
           if (t === "dark" || t === "light")
             document.documentElement.dataset.theme = t;
+          var l = localStorage.getItem("emailjsLabLang");
+          if (l === "en" || l === "fr") document.documentElement.lang = l;
         } catch (e) {}
       })();
     </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "HowTo",
+        "name": "Apprendre EmailJS en 10 étapes",
+        "description": "Parcours progressif pour envoyer des emails depuis le navigateur avec EmailJS.",
+        "totalTime": "PT2H",
+        "step": [
+          {
+            "@type": "HowToStep",
+            "position": 1,
+            "name": "Créer un compte EmailJS"
+          },
+          {
+            "@type": "HowToStep",
+            "position": 2,
+            "name": "Créer un Email Service"
+          },
+          {
+            "@type": "HowToStep",
+            "position": 3,
+            "name": "Créer un Email Template"
+          },
+          {
+            "@type": "HowToStep",
+            "position": 4,
+            "name": "Récupérer les identifiants"
+          },
+          {
+            "@type": "HowToStep",
+            "position": 5,
+            "name": "Installer le SDK EmailJS"
+          },
+          {
+            "@type": "HowToStep",
+            "position": 6,
+            "name": "Créer le formulaire HTML"
+          },
+          {
+            "@type": "HowToStep",
+            "position": 7,
+            "name": "Connecter le formulaire à EmailJS"
+          },
+          {
+            "@type": "HowToStep",
+            "position": 8,
+            "name": "Envoyer le premier email"
+          },
+          { "@type": "HowToStep", "position": 9, "name": "Gérer les erreurs" },
+          {
+            "@type": "HowToStep",
+            "position": 10,
+            "name": "Sécuriser et améliorer"
+          }
+        ]
+      }
+    </script>
+
     <script
       defer
       src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
     ></script>
+    <script defer src="js/i18n.js"></script>
+    <script defer src="js/history.js"></script>
+    <script defer src="js/playground.js"></script>
+    <script defer src="js/quiz.js"></script>
     <script defer src="js/app.js"></script>
+    <script defer src="js/sw-register.js"></script>
   </head>
   <body>
-    <a class="skip-link" href="#main">Aller au contenu principal</a>
+    <a class="skip-link" href="#main" data-i18n="skip"
+      >Aller au contenu principal</a
+    >
 
-    <!-- ========== HEADER ========== -->
+    <div class="reading-progress" aria-hidden="true">
+      <div class="reading-progress-bar" id="readingProgress"></div>
+    </div>
+
     <header class="site-header" id="top">
       <div class="container header-inner">
         <a href="#top" class="brand" aria-label="EmailJS Lab — accueil">
@@ -76,22 +182,70 @@
         </a>
 
         <nav class="main-nav" id="mainNav" aria-label="Navigation principale">
-          <button class="nav-link" type="button" data-target="#intro">
+          <button
+            class="nav-link"
+            type="button"
+            data-target="#intro"
+            data-i18n="nav.intro"
+          >
             Introduction
           </button>
-          <button class="nav-link" type="button" data-target="#parcours">
+          <button
+            class="nav-link"
+            type="button"
+            data-target="#parcours"
+            data-i18n="nav.path"
+          >
             Parcours
           </button>
-          <button class="nav-link" type="button" data-target="#configuration">
+          <button
+            class="nav-link"
+            type="button"
+            data-target="#configuration"
+            data-i18n="nav.config"
+          >
             Configuration
           </button>
-          <button class="nav-link" type="button" data-target="#labo">
+          <button
+            class="nav-link"
+            type="button"
+            data-target="#labo"
+            data-i18n="nav.lab"
+          >
             Laboratoire
           </button>
-          <button class="nav-link" type="button" data-target="#debug">
+          <button
+            class="nav-link"
+            type="button"
+            data-target="#historique"
+            data-i18n="nav.history"
+          >
+            Historique
+          </button>
+          <button
+            class="nav-link"
+            type="button"
+            data-target="#debug"
+            data-i18n="nav.debug"
+          >
             Dépannage
           </button>
-          <button class="nav-link" type="button" data-target="#faq">FAQ</button>
+          <button
+            class="nav-link"
+            type="button"
+            data-target="#quiz"
+            data-i18n="nav.quiz"
+          >
+            Quiz
+          </button>
+          <button
+            class="nav-link"
+            type="button"
+            data-target="#faq"
+            data-i18n="nav.faq"
+          >
+            FAQ
+          </button>
           <a
             class="nav-link nav-link-github"
             href="https://github.com/francis-mampouya/learn_email_js"
@@ -109,6 +263,58 @@
         </nav>
 
         <div class="header-actions">
+          <div class="lang-switcher">
+            <button
+              class="icon-btn lang-btn"
+              id="langToggle"
+              type="button"
+              aria-label="Changer de langue"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              <span class="lang-flag" id="langFlag">🇫🇷</span>
+              <span class="lang-code" id="langLabel">FR</span>
+              <svg
+                class="lang-chev"
+                aria-hidden="true"
+                viewBox="0 0 24 24"
+                width="12"
+                height="12"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="m6 9 6 6 6-6" />
+              </svg>
+            </button>
+            <ul class="lang-menu" id="langMenu" hidden role="menu">
+              <li role="none">
+                <button
+                  type="button"
+                  role="menuitem"
+                  class="lang-option"
+                  data-lang="fr"
+                >
+                  <span class="lang-flag">🇫🇷</span>
+                  <span>Français</span>
+                </button>
+              </li>
+              <li role="none">
+                <button
+                  type="button"
+                  role="menuitem"
+                  class="lang-option"
+                  data-lang="en"
+                >
+                  <span class="lang-flag">🇬🇧</span>
+                  <span>English</span>
+                </button>
+              </li>
+            </ul>
+          </div>
+
           <button
             class="icon-btn"
             id="themeToggle"
@@ -148,6 +354,7 @@
               />
             </svg>
           </button>
+
           <button
             class="menu-toggle"
             id="menuToggle"
@@ -163,18 +370,17 @@
     </header>
 
     <main id="main">
-      <!-- ========== HERO ========== -->
       <section class="hero">
         <div class="container hero-inner">
           <p class="hero-eyebrow">
             <span class="dot" aria-hidden="true"></span>
             HTML5 · CSS3 · JavaScript vanilla · EmailJS v4
           </p>
-          <h1>
+          <h1 data-i18n="hero.title">
             Maîtrisez l'envoi d'emails
             <span class="text-accent">côté client</span> avec EmailJS
           </h1>
-          <p class="hero-sub">
+          <p class="hero-sub" data-i18n="hero.sub">
             Un laboratoire pédagogique complet pour comprendre EmailJS,
             configurer votre service, puis envoyer votre premier email depuis un
             simple formulaire — <strong>sans backend, sans framework</strong>.
@@ -185,7 +391,7 @@
               type="button"
               data-target="#parcours"
             >
-              Commencer le parcours
+              <span data-i18n="hero.cta1">Commencer le parcours</span>
               <svg
                 aria-hidden="true"
                 width="16"
@@ -200,25 +406,42 @@
                 <path d="M5 12h14M12 5l7 7-7 7" />
               </svg>
             </button>
-            <button class="btn btn-outline" type="button" data-target="#labo">
+            <button
+              class="btn btn-outline"
+              type="button"
+              data-target="#labo"
+              data-i18n="hero.cta2"
+            >
               Tester le laboratoire
             </button>
           </div>
           <ul class="hero-stats" aria-label="Points clés du laboratoire">
-            <li><strong>10</strong><span>étapes guidées</span></li>
-            <li><strong>8</strong><span>erreurs décryptées</span></li>
-            <li><strong>0</strong><span>backend requis</span></li>
+            <li>
+              <strong>10</strong
+              ><span data-i18n="hero.stat1">étapes guidées</span>
+            </li>
+            <li>
+              <strong>8</strong
+              ><span data-i18n="hero.stat2">erreurs décryptées</span>
+            </li>
+            <li>
+              <strong>0</strong
+              ><span data-i18n="hero.stat3">backend requis</span>
+            </li>
           </ul>
         </div>
       </section>
 
-      <!-- ========== INTRODUCTION ========== -->
       <section class="section" id="intro">
         <div class="container">
           <header class="section-head">
-            <p class="section-eyebrow">Introduction</p>
-            <h2 class="section-title">Qu'est-ce qu'EmailJS&nbsp;?</h2>
-            <p class="section-sub">
+            <p class="section-eyebrow" data-i18n="intro.eyebrow">
+              Introduction
+            </p>
+            <h2 class="section-title" data-i18n="intro.title">
+              Qu'est-ce qu'EmailJS ?
+            </h2>
+            <p class="section-sub" data-i18n="intro.sub">
               Comprendre les fondations avant d'écrire la première ligne de
               code.
             </p>
@@ -242,8 +465,8 @@
                   <path d="M12 17h.01" />
                 </svg>
               </div>
-              <h3>Qu'est-ce qu'EmailJS&nbsp;?</h3>
-              <p>
+              <h3 data-i18n="intro.c1.title">Qu'est-ce qu'EmailJS ?</h3>
+              <p data-i18n="intro.c1.text">
                 EmailJS est un service tiers qui permet d'envoyer des emails
                 directement depuis du JavaScript côté client, sans écrire la
                 moindre ligne de code serveur.
@@ -267,8 +490,8 @@
                   <circle cx="12" cy="12" r="2" />
                 </svg>
               </div>
-              <h3>À quoi ça sert&nbsp;?</h3>
-              <p>
+              <h3 data-i18n="intro.c2.title">À quoi ça sert ?</h3>
+              <p data-i18n="intro.c2.text">
                 Formulaires de contact, newsletters, confirmations de commande,
                 notifications : tout ce qui nécessite un envoi d'email depuis
                 une page web.
@@ -292,11 +515,11 @@
                   />
                 </svg>
               </div>
-              <h3>Comment ça fonctionne&nbsp;?</h3>
-              <p>
-                Vous configurez un <em>service</em> (ex. Gmail), un
-                <em>template</em> (modèle d'email) sur le dashboard EmailJS,
-                puis vous connectez votre formulaire via le SDK JavaScript.
+              <h3 data-i18n="intro.c3.title">Comment ça fonctionne ?</h3>
+              <p data-i18n="intro.c3.text">
+                Vous configurez un service (ex. Gmail), un template (modèle
+                d'email) sur le dashboard EmailJS, puis vous connectez votre
+                formulaire via le SDK JavaScript.
               </p>
             </article>
 
@@ -315,28 +538,28 @@
                   <path d="M12 2 4 6v6c0 5 3.5 9 8 10 4.5-1 8-5 8-10V6l-8-4z" />
                 </svg>
               </div>
-              <h3>Avantages &amp; limites</h3>
-              <p>
+              <h3 data-i18n="intro.c4.title">Avantages &amp; limites</h3>
+              <p data-i18n="intro.c4.text">
                 <strong>Avantages :</strong> zéro backend, mise en place rapide,
-                idéal pour apprendre et prototyper.
-              </p>
-              <p>
-                <strong>Limites :</strong> plan gratuit limité (≈ 200
-                emails/mois, 1 requête/sec), clé publique exposée, non adapté à
-                très haut volume.
+                idéal pour apprendre et prototyper.<br /><strong
+                  >Limites :</strong
+                >
+                plan gratuit limité (≈ 200 emails/mois, 1 requête/sec), clé
+                publique exposée.
               </p>
             </article>
           </div>
         </div>
       </section>
 
-      <!-- ========== PARCOURS ========== -->
       <section class="section section-alt" id="parcours">
         <div class="container">
           <header class="section-head">
-            <p class="section-eyebrow">Parcours</p>
-            <h2 class="section-title">10 étapes progressives</h2>
-            <p class="section-sub">
+            <p class="section-eyebrow" data-i18n="path.eyebrow">Parcours</p>
+            <h2 class="section-title" data-i18n="path.title">
+              10 étapes progressives
+            </h2>
+            <p class="section-sub" data-i18n="path.sub">
               Suivez-les dans l'ordre : chaque étape s'appuie sur la précédente.
             </p>
           </header>
@@ -348,7 +571,7 @@
               class="step-detail-close"
               id="stepDetailClose"
               type="button"
-              aria-label="Fermer le détail de l'étape"
+              aria-label="Fermer"
             >
               <svg
                 aria-hidden="true"
@@ -369,13 +592,16 @@
         </div>
       </section>
 
-      <!-- ========== CONFIGURATION ========== -->
       <section class="section" id="configuration">
         <div class="container">
           <header class="section-head">
-            <p class="section-eyebrow">Configuration</p>
-            <h2 class="section-title">Vos identifiants EmailJS</h2>
-            <p class="section-sub">
+            <p class="section-eyebrow" data-i18n="config.eyebrow">
+              Configuration
+            </p>
+            <h2 class="section-title" data-i18n="config.title">
+              Vos identifiants EmailJS
+            </h2>
+            <p class="section-sub" data-i18n="config.sub">
               Stockés
               <strong>uniquement dans votre navigateur</strong> (localStorage).
               Rien n'est envoyé sur un serveur tiers.
@@ -384,8 +610,8 @@
 
           <div class="config-grid">
             <div class="card form-card">
-              <h3>Identifiants du laboratoire</h3>
-              <p class="form-hint">
+              <h3 data-i18n="config.form.title">Identifiants du laboratoire</h3>
+              <p class="form-hint" data-i18n="config.form.hint">
                 Ces valeurs servent uniquement à alimenter le formulaire de test
                 ci-dessous.
               </p>
@@ -400,7 +626,6 @@
                     placeholder="YOUR_PUBLIC_KEY"
                     autocomplete="off"
                     spellcheck="false"
-                    inputmode="text"
                   />
                   <small class="field-note"
                     >EmailJS → Account → General → Public Key</small
@@ -440,13 +665,26 @@
                 </div>
 
                 <div class="form-actions">
-                  <button type="submit" class="btn btn-primary btn-block">
+                  <button
+                    type="submit"
+                    class="btn btn-primary btn-block"
+                    data-i18n="config.form.save"
+                  >
                     Enregistrer les identifiants
                   </button>
                   <button
                     type="button"
                     class="btn btn-ghost btn-block"
+                    id="exportConfigBtn"
+                    data-i18n="config.form.export"
+                  >
+                    Exporter (.json)
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-ghost btn-block"
                     id="clearConfigBtn"
+                    data-i18n="config.form.clear"
                   >
                     Effacer
                   </button>
@@ -479,36 +717,36 @@
                   />
                   <path d="M12 9v4M12 17h.01" />
                 </svg>
-                Public vs. Secret
+                <span data-i18n="config.note.title">Public vs. Secret</span>
               </h3>
-              <p>
+              <p data-i18n="config.note.p1">
                 La <strong>Public Key</strong> est
                 <em>faite pour être visible</em> dans votre code JavaScript.
                 Elle identifie simplement l'expéditeur.
               </p>
-              <p>
+              <p data-i18n="config.note.p2">
                 En revanche, avec EmailJS,
                 <strong
                   >aucune clé secrète n'est utilisée côté navigateur</strong
-                >. Si on vous demande d'afficher un secret dans le front,
-                arrêtez-vous immédiatement.
+                >.
               </p>
-              <p class="note-rule">
+              <p class="note-rule" data-i18n="config.note.rule">
                 <strong>Règle d'or :</strong> ne mettez jamais une clé privée
-                côté client. Tout navigateur est visible par n'importe qui.
+                côté client.
               </p>
             </aside>
           </div>
         </div>
       </section>
 
-      <!-- ========== LABORATOIRE ========== -->
       <section class="section section-alt" id="labo">
         <div class="container">
           <header class="section-head">
-            <p class="section-eyebrow">Laboratoire</p>
-            <h2 class="section-title">Envoyez un vrai email</h2>
-            <p class="section-sub">
+            <p class="section-eyebrow" data-i18n="lab.eyebrow">Laboratoire</p>
+            <h2 class="section-title" data-i18n="lab.title">
+              Envoyez un vrai email
+            </h2>
+            <p class="section-sub" data-i18n="lab.sub">
               Remplissez le formulaire et observez les états : chargement,
               succès, erreur.
             </p>
@@ -517,7 +755,7 @@
           <div class="lab-grid">
             <form class="card form-card" id="labForm" novalidate>
               <div class="form-field">
-                <label for="labName">Nom</label>
+                <label for="labName" data-i18n="lab.name">Nom</label>
                 <input
                   type="text"
                   id="labName"
@@ -530,7 +768,7 @@
               </div>
 
               <div class="form-field">
-                <label for="labEmail">Email</label>
+                <label for="labEmail" data-i18n="lab.email">Email</label>
                 <input
                   type="email"
                   id="labEmail"
@@ -542,7 +780,7 @@
               </div>
 
               <div class="form-field">
-                <label for="labSubject">Sujet</label>
+                <label for="labSubject" data-i18n="lab.subject">Sujet</label>
                 <input
                   type="text"
                   id="labSubject"
@@ -554,7 +792,7 @@
               </div>
 
               <div class="form-field">
-                <label for="labMessage">Message</label>
+                <label for="labMessage" data-i18n="lab.message">Message</label>
                 <textarea
                   id="labMessage"
                   name="message"
@@ -570,7 +808,9 @@
                 class="btn btn-primary btn-block"
                 id="sendBtn"
               >
-                <span class="btn-label">Envoyer le message</span>
+                <span class="btn-label" data-i18n="lab.send"
+                  >Envoyer le message</span
+                >
                 <span class="send-spinner" aria-hidden="true"></span>
               </button>
 
@@ -583,42 +823,110 @@
             </form>
 
             <aside class="card card-aside">
-              <h3>Comment ça marche&nbsp;?</h3>
+              <h3 data-i18n="lab.how.title">Comment ça marche ?</h3>
               <ol class="mini-list">
-                <li>
+                <li data-i18n="lab.how.li1">
                   Les champs possèdent un attribut
                   <code>name</code> correspondant aux variables du template.
                 </li>
-                <li>
+                <li data-i18n="lab.how.li2">
                   Le SDK collecte automatiquement ces valeurs avec
                   <code>sendForm()</code>.
                 </li>
-                <li>
+                <li data-i18n="lab.how.li3">
                   Chaque champ est validé en JavaScript <em>avant</em> l'envoi.
                 </li>
-                <li>
+                <li data-i18n="lab.how.li4">
                   Le bouton reflète l'état : chargement / succès / erreur.
                 </li>
               </ol>
-              <p class="form-hint">
+              <p class="form-hint" data-i18n="lab.how.vars">
                 Variables attendues dans votre template :
                 <code>from_name</code>, <code>reply_to</code>,
                 <code>subject</code>, <code>message</code>.
               </p>
+
+              <div class="rate-indicator" id="rateIndicator">
+                <div class="rate-stat">
+                  <span class="rate-label" data-i18n="lab.rate.today"
+                    >Envois aujourd'hui</span
+                  >
+                  <strong id="rateToday">0</strong>
+                </div>
+                <div class="rate-stat">
+                  <span class="rate-label" data-i18n="lab.rate.next"
+                    >Prochain envoi</span
+                  >
+                  <strong id="rateNext">Maintenant</strong>
+                </div>
+              </div>
             </aside>
+          </div>
+
+          <div class="card playground" id="playground">
+            <h3 data-i18n="playground.title">Prévisualisation du template</h3>
+            <p class="form-hint" data-i18n="playground.hint">
+              Modifiez le template et voyez le rendu avec des valeurs d'exemple.
+            </p>
+            <textarea id="tplSource" class="tpl-source" rows="6">
+Bonjour {{from_name}},
+
+{{message}}
+
+—
+Sujet : {{subject}}
+Répondre à : {{reply_to}}</textarea
+            >
+            <div class="tpl-preview" id="tplPreview" aria-live="polite"></div>
           </div>
         </div>
       </section>
 
-      <!-- ========== CODE ========== -->
-      <section class="section" id="code">
+      <section class="section" id="historique">
         <div class="container">
           <header class="section-head">
-            <p class="section-eyebrow">Code source</p>
-            <h2 class="section-title">Exemple concret</h2>
-            <p class="section-sub">
-              Le code réellement utilisé par ce laboratoire. Copiez-le et
-              adaptez-le à votre projet.
+            <p class="section-eyebrow" data-i18n="history.eyebrow">
+              Historique
+            </p>
+            <h2 class="section-title" data-i18n="history.title">
+              Vos 10 derniers envois
+            </h2>
+            <p class="section-sub" data-i18n="history.sub">
+              Sauvegardés localement dans votre navigateur.
+            </p>
+          </header>
+
+          <ul class="history-list card" id="historyList"></ul>
+          <p
+            class="history-empty"
+            id="historyEmpty"
+            hidden
+            data-i18n="history.empty"
+          >
+            Aucun envoi pour le moment.
+          </p>
+          <div class="history-actions">
+            <button
+              class="btn btn-ghost"
+              type="button"
+              id="clearHistoryBtn"
+              data-i18n="history.clear"
+            >
+              Effacer l'historique
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-alt" id="code">
+        <div class="container">
+          <header class="section-head">
+            <p class="section-eyebrow" data-i18n="code.eyebrow">Code source</p>
+            <h2 class="section-title" data-i18n="code.title">
+              Exemple concret
+            </h2>
+            <p class="section-sub" data-i18n="code.sub">
+              Le code réellement utilisé par ce laboratoire.
             </p>
           </header>
 
@@ -665,7 +973,7 @@
                     d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"
                   />
                 </svg>
-                Copier
+                <span data-i18n="code.copy">Copier</span>
               </button>
             </div>
             <pre
@@ -709,13 +1017,14 @@ document.getElementById('labForm')
         </div>
       </section>
 
-      <!-- ========== DEBUG ========== -->
-      <section class="section section-alt" id="debug">
+      <section class="section" id="debug">
         <div class="container">
           <header class="section-head">
-            <p class="section-eyebrow">Dépannage</p>
-            <h2 class="section-title">Erreurs fréquentes</h2>
-            <p class="section-sub">
+            <p class="section-eyebrow" data-i18n="debug.eyebrow">Dépannage</p>
+            <h2 class="section-title" data-i18n="debug.title">
+              Erreurs fréquentes
+            </h2>
+            <p class="section-sub" data-i18n="debug.sub">
               Les 8 erreurs les plus courantes et leur solution immédiate.
             </p>
           </header>
@@ -723,15 +1032,17 @@ document.getElementById('labForm')
         </div>
       </section>
 
-      <!-- ========== CHECKLIST ========== -->
-      <section class="section" id="checklist">
+      <section class="section section-alt" id="checklist">
         <div class="container">
           <header class="section-head">
-            <p class="section-eyebrow">Progression</p>
-            <h2 class="section-title">Checklist de maîtrise</h2>
-            <p class="section-sub">
-              Votre progression est sauvegardée localement dans votre
-              navigateur.
+            <p class="section-eyebrow" data-i18n="checklist.eyebrow">
+              Progression
+            </p>
+            <h2 class="section-title" data-i18n="checklist.title">
+              Checklist de maîtrise
+            </h2>
+            <p class="section-sub" data-i18n="checklist.sub">
+              Votre progression est sauvegardée localement.
             </p>
           </header>
 
@@ -742,35 +1053,43 @@ document.getElementById('labForm')
           >
             <label class="check-item">
               <input type="checkbox" data-check="Compte EmailJS créé" />
-              <span>Compte EmailJS créé</span>
+              <span data-i18n="checklist.i1">Compte EmailJS créé</span>
             </label>
             <label class="check-item">
               <input type="checkbox" data-check="Service configuré" />
-              <span>Service configuré (Gmail, Outlook…)</span>
+              <span data-i18n="checklist.i2"
+                >Service configuré (Gmail, Outlook…)</span
+              >
             </label>
             <label class="check-item">
               <input type="checkbox" data-check="Template créé" />
-              <span>Template créé avec les variables</span>
+              <span data-i18n="checklist.i3"
+                >Template créé avec les variables</span
+              >
             </label>
             <label class="check-item">
               <input type="checkbox" data-check="Public Key récupérée" />
-              <span>Public Key récupérée</span>
+              <span data-i18n="checklist.i4">Public Key récupérée</span>
             </label>
             <label class="check-item">
               <input type="checkbox" data-check="Formulaire HTML créé" />
-              <span>Formulaire HTML avec attributs <code>name</code></span>
+              <span data-i18n="checklist.i5"
+                >Formulaire HTML avec attributs <code>name</code></span
+              >
             </label>
             <label class="check-item">
               <input type="checkbox" data-check="SDK EmailJS installé" />
-              <span>SDK EmailJS installé via CDN</span>
+              <span data-i18n="checklist.i6">SDK EmailJS installé via CDN</span>
             </label>
             <label class="check-item">
               <input type="checkbox" data-check="Premier email envoyé" />
-              <span>Premier email envoyé avec succès</span>
+              <span data-i18n="checklist.i7"
+                >Premier email envoyé avec succès</span
+              >
             </label>
             <label class="check-item">
               <input type="checkbox" data-check="Gestion des erreurs ajoutée" />
-              <span>Gestion des erreurs ajoutée</span>
+              <span data-i18n="checklist.i8">Gestion des erreurs ajoutée</span>
             </label>
           </form>
           <p
@@ -779,37 +1098,57 @@ document.getElementById('labForm')
             role="status"
             aria-live="polite"
           >
-            <span id="checklistDone">0</span> / 8 étapes validées
+            <span id="checklistDone">0</span> / 8
+            <span data-i18n="checklist.progress">étapes validées</span>
           </p>
         </div>
       </section>
 
-      <!-- ========== FAQ ========== -->
+      <section class="section" id="quiz">
+        <div class="container">
+          <header class="section-head">
+            <p class="section-eyebrow" data-i18n="quiz.eyebrow">Quiz</p>
+            <h2 class="section-title" data-i18n="quiz.title">
+              Testez vos connaissances
+            </h2>
+            <p class="section-sub" data-i18n="quiz.sub">
+              5 questions pour valider votre compréhension.
+            </p>
+          </header>
+          <div class="quiz card" id="quizContainer"></div>
+          <div class="quiz-result" id="quizResult" hidden></div>
+        </div>
+      </section>
+
       <section class="section section-alt" id="faq">
         <div class="container">
           <header class="section-head">
-            <p class="section-eyebrow">FAQ</p>
-            <h2 class="section-title">Questions fréquentes</h2>
+            <p class="section-eyebrow" data-i18n="faq.eyebrow">FAQ</p>
+            <h2 class="section-title" data-i18n="faq.title">
+              Questions fréquentes
+            </h2>
           </header>
           <div class="faq-list card" id="faqList"></div>
         </div>
       </section>
     </main>
 
-    <!-- ========== FOOTER ========== -->
     <footer class="site-footer">
       <div class="container footer-inner">
         <div class="footer-brand">
           <span class="brand-text"
             >EmailJS<span class="brand-accent">Lab</span></span
           >
-          <p>Un projet pédagogique open source pour apprendre EmailJS.</p>
+          <p data-i18n="footer.tagline">
+            Un projet pédagogique open source pour apprendre EmailJS.
+          </p>
         </div>
         <nav class="footer-links" aria-label="Liens du pied de page">
           <a
             href="https://www.emailjs.com/docs/"
             target="_blank"
             rel="noopener noreferrer"
+            data-i18n="footer.docs"
             >Documentation EmailJS</a
           >
           <a
@@ -818,13 +1157,102 @@ document.getElementById('labForm')
             rel="noopener noreferrer"
             >GitHub</a
           >
-          <a href="#top">Haut de page</a>
+          <a
+            href="https://github.com/francis-mampouya/learn_email_js/issues/new"
+            target="_blank"
+            rel="noopener noreferrer"
+            data-i18n="footer.bug"
+            >Signaler un bug</a
+          >
+          <a href="#top" data-i18n="footer.top">Haut de page</a>
         </nav>
       </div>
-      <p class="footer-legal">
+      <p class="footer-legal" data-i18n="footer.legal">
         Projet pédagogique non affilié officiellement à EmailJS. Nom et identité
         visuelle utilisés à des fins d'apprentissage.
       </p>
     </footer>
+
+    <a
+      class="built-with"
+      href="https://github.com/francis-mampouya/learn_email_js"
+      target="_blank"
+      rel="noopener"
+    >
+      <span data-i18n="builtwith">Fait avec</span>
+      <span aria-hidden="true">❤️</span>
+      <span data-i18n="builtwith.by">par Francis</span>
+    </a>
+
+    <button
+      class="fab"
+      id="fabHelp"
+      type="button"
+      aria-label="Afficher les raccourcis"
+    >
+      ?
+    </button>
+    <div
+      class="shortcuts-modal"
+      id="shortcutsModal"
+      hidden
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="shortcutsTitle"
+    >
+      <div class="shortcuts-content card">
+        <button
+          class="shortcuts-close"
+          id="shortcutsClose"
+          type="button"
+          aria-label="Fermer"
+        >
+          ✕
+        </button>
+        <h3 id="shortcutsTitle" data-i18n="shortcuts.title">
+          Raccourcis clavier
+        </h3>
+        <ul>
+          <li>
+            <kbd>⌘</kbd> + <kbd>K</kbd> —
+            <span data-i18n="shortcuts.cmdk">Palette de commandes</span>
+          </li>
+          <li>
+            <kbd>T</kbd> —
+            <span data-i18n="shortcuts.theme">Basculer le thème</span>
+          </li>
+          <li>
+            <kbd>?</kbd> —
+            <span data-i18n="shortcuts.help">Afficher cette aide</span>
+          </li>
+          <li>
+            <kbd>Esc</kbd> — <span data-i18n="shortcuts.esc">Fermer</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div
+      class="cmdk"
+      id="cmdk"
+      hidden
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="cmdkLabel"
+    >
+      <div class="cmdk-modal">
+        <label for="cmdkInput" class="sr-only" id="cmdkLabel"
+          >Aller à une section</label
+        >
+        <input
+          type="text"
+          id="cmdkInput"
+          placeholder="Aller à une section…"
+          autocomplete="off"
+          spellcheck="false"
+        />
+        <ul class="cmdk-list" id="cmdkList" role="listbox"></ul>
+      </div>
+    </div>
   </body>
 </html>

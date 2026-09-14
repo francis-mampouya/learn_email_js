@@ -1,0 +1,14 @@
+﻿{
+  "name": "EmailJS Lab",
+  "short_name": "EmailJS Lab",
+  "description": "Laboratoire pÃ©dagogique pour apprendre Ã  envoyer des emails avec EmailJS.",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#FFFFFF",
+  "theme_color": "#FF8434",
+  "lang": "fr",
+  "icons": [
+    { "src": "./assets/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "./assets/icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}

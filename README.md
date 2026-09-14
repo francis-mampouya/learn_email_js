@@ -1,45 +1,66 @@
-# 📑 EmailJS Lab — Docs & Sandbox
+# 📬 EmailJS Lab
 
-Une documentation moderne, interactive et en français pour apprendre à intégrer **EmailJS** dans vos applications web **sans serveur Back-End**.
+> Laboratoire pédagogique interactif pour apprendre à envoyer des emails côté client avec **EmailJS** — sans backend.
 
-Conçu pour guider les développeurs pas à pas, de la configuration du tableau de bord EmailJS jusqu'à l'implémentation du code, avec un espace de test (« Sandbox ») en direct.
+[![Demo](https://img.shields.io/badge/demo-live-007FFF?style=for-the-badge)](https://francis-mampouya.github.io/learn_email_js)
+[![License](https://img.shields.io/badge/license-MIT-green?style=for-the-badge)](LICENSE)
+[![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)](.)
+[![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](.)
 
-## 🚀 Fonctionnalités du site
+---
 
-- **Guide pas à pas** : explications claires pour configurer son compte, son service d'email et ses templates (10 étapes).
-- **Exemples de code prêts à l'emploi** : extraits propres en JavaScript Vanilla (SDK CDN officiel) avec **coloration syntaxique** et bouton « Copier ».
-- **Bac à sable interactif (Sandbox)** : un formulaire de test dans lequel on renseigne ses propres clés EmailJS (stockées en `localStorage`) pour tester l'envoi d'e-mails en direct.
-- **Design Responsive & Accessible** : interface **claire/sombre**, optimisée pour mobile, tablette et ordinateur.
+## ✨ Aperçu
 
-## 🛠️ Technologies utilisées
+![Aperçu du projet](./assets/preview.png)
 
-- **Front-End** : HTML5, CSS3, JavaScript Vanilla (aucun framework)
-- **Outils & API** : EmailJS Browser SDK (`@emailjs/browser@4`)
-- **Hébergement** : GitHub Pages / Netlify / Vercel (ou Live Server local)
+---
 
-## 📦 Installation locale
+## 🎯 Objectifs pédagogiques
 
-```bash
-git clone https://github.com/francis-mampouya/learn_email_js.git
-cd learn_email_js
+- Comprendre l'architecture EmailJS (Service / Template / Public Key)
+- Configurer un service email sans backend
+- Envoyer un email depuis un formulaire HTML
+- Gérer les erreurs les plus fréquentes
+- Sécuriser l'envoi (rate limiting, validation)
+
+---
+
+## 🚀 Démo en ligne
+
+👉 **[https://francis-mampouya.github.io/learn_email_js](https://francis-mampouya.github.io/learn_email_js)**
+
+---
+
+## 🛠️ Stack technique
+
+| Technologie                 | Usage                               |
+| --------------------------- | ----------------------------------- |
+| HTML5 sémantique            | Structure accessible                |
+| CSS3 moderne                | Variables, Grid, thème clair/sombre |
+| JavaScript vanilla (ES2022) | Modules, async/await, localStorage  |
+| EmailJS v4                  | Envoi d'emails côté client          |
+
+---
+
+## 📂 Structure du projet
+
+## 📂 Structure du projet
+
+```text
+learn_email_js/
+├── index.html              # Structure HTML5 principale (UI multilingue)
+├── manifest.webmanifest    # Configuration PWA
+├── sw.js                   # Service Worker (Gestion du cache offline & CDN)
+├── robots.txt              # Configuration SEO pour les moteurs de recherche
+├── sitemap.xml             # Plan du site pour l'indexation
+├── assets/                 # Icônes de l'application et preview
+├── css/
+│   └── style.css           # Design global, Grid, Flexbox et Thèmes
+└── js/
+    ├── app.js              # Point d'entrée et initialisation globale
+    ├── i18n.js             # Gestion du multilingue (FR/EN)
+    ├── playground.js       # Logique du formulaire et envoi EmailJS v4
+    ├── history.js          # Gestion des 10 derniers envois (localStorage)
+    ├── quiz.js             # Système interactif d'évaluation
+    └── sw-register.js      # Enregistrement sécurisé du Service Worker
 ```
-
-Ouvrez simplement `index.html` avec l'extension VS Code **Live Server** (projet HTML/JS pur, aucun build requis).
-
-## 🔐 Sécurité & Bonnes pratiques
-
-Le site rappelle les règles essentielles de sécurité EmailJS :
-
-- Utilisation **exclusive de la Public Key côté client** — c'est fait pour ça.
-- **Aucune clé secrète** ne doit jamais être placée dans un fichier front-end (visible par tous).
-- Configurer les **restrictions d'origine (whitelist de domaines)** sur le tableau de bord EmailJS pour éviter le spam.
-- Trafic limité : `localStorage` uniquement côté navigateur, identifiants jamais envoyés ailleurs.
-
-## ✍️ Auteur
-
-Projet réalisé par **Yves Jean Francis MAMPOUYA** dans le cadre de ma formation de Développeur Full-Stack.
-
-- GitHub : [francis-mampouya](https://github.com/francis-mampouya)
-- LinkedIn : [Yves Jean Francis MAMPOUYA](https://www.linkedin.com/in/yves-jean-francis-mampouya)
-
-> ⚠️ Projet pédagogique, non affilié officiellement à EmailJS.

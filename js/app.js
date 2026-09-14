@@ -379,6 +379,38 @@ function initCode() {
   const jsBlock = $('#codeJs');
   const filename = $('#codeFilename');
 
+  /* Coloration syntaxique légère (sans dépendance) */
+  const esc = (t) => t.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+
+  function highlightHtml(t) {
+    return esc(t).replace(
+      /(&lt;!--[\s\S]*?--&gt;)|(&lt;\/?)([a-zA-Z][\w-]*)|([\w-]+)(=)/g,
+      (m, com, lt, tag, attr, eq) => com
+        ? `<span class="tok-com">${com}</span>`
+        : lt
+          ? `${lt}<span class="tok-tag">${tag}</span>`
+          : `<span class="tok-attr">${attr}</span>${eq}`
+    );
+  }
+
+  function highlightJs(t) {
+    return esc(t).replace(
+      /(\/\/[^\n]*)|('(?:[^'\\]|\\.)*'|"(?:[^"\\]|\\.)*")|\b(const|let|var|function|return|await|async|if|else|try|catch|new|document|navigator|emailjs|this|addEventListener)\b|\b(\d+)\b/g,
+      (m, com, str, kw, num) => com
+        ? `<span class="tok-com">${com}</span>`
+        : str
+          ? `<span class="tok-str">${str}</span>`
+          : kw
+            ? `<span class="tok-kw">${kw}</span>`
+            : num
+              ? `<span class="tok-num">${num}</span>`
+              : m
+    );
+  }
+
+  htmlBlock.querySelector('code').innerHTML = highlightHtml(htmlBlock.textContent);
+  jsBlock.querySelector('code').innerHTML = highlightJs(jsBlock.textContent);
+
   tabs.forEach((tab) => {
     tab.addEventListener('click', () => {
       tabs.forEach((t) => t.classList.remove('is-active'));
@@ -470,10 +502,31 @@ function initFaq() {
   });
 }
 
+/* ---------- Thème clair / sombre ---------- */
+
+function initTheme() {
+  const toggle = $('#themeToggle');
+  const doc = document.documentElement;
+
+  function setIcon() {
+    toggle.textContent = doc.dataset.theme === 'dark' ? '☀️' : '🌙';
+  }
+
+  toggle.addEventListener('click', () => {
+    const next = doc.dataset.theme === 'dark' ? 'light' : 'dark';
+    doc.dataset.theme = next;
+    localStorage.setItem('emailjsLabTheme', next);
+    setIcon();
+  });
+
+  setIcon();
+}
+
 /* ---------- Initialisation ---------- */
 
 document.addEventListener('DOMContentLoaded', () => {
   initNav();
+  initTheme();
   initSteps();
   initConfig();
   initLab();

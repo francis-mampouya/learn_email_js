@@ -218,3 +218,42 @@ code{font-family:Consolas,"Courier New",monospace;font-size:.9em;background:var(
   .nav-link{padding:.8rem 1rem;font-size:1rem;justify-content:flex-start}
   .nav-link-github{justify-content:center}
 }
+
+/* ===== Bouton thème ===== */
+.theme-toggle{width:42px;height:42px;border:1px solid var(--border);background:rgba(255,255,255,.6);
+  border-radius:var(--radius-sm);cursor:pointer;font-size:1rem;line-height:1;flex-shrink:0}
+.theme-toggle:hover{background:var(--blue-soft)}
+.theme-toggle:focus-visible{outline:3px solid rgba(37,99,235,.4)}
+
+/* ===== Coloration syntaxique (code sombre constant) ===== */
+.code-block code{background:transparent;color:inherit;padding:0;font-size:inherit}
+.tok-com{color:#64748b;font-style:italic}
+.tok-str{color:#fbbf24}
+.tok-kw{color:#60a5fa}
+.tok-num{color:#2dd4bf}
+.tok-tag{color:#7dd3fc}
+.tok-attr{color:#c4b5fd}
+
+/* ===== Thème sombre ===== */
+[data-theme="dark"]{
+  --bg:#0b1220;--bg-alt:#0e1726;--ink:#e5e7eb;
+  --border:#24304a;--gray:#9ca3af;--gray-light:#64748b;
+  --blue-soft:#142c5e;--blue-light:#1d4ed8;
+  --shadow:0 1px 3px rgba(0,0,0,.4),0 6px 20px rgba(0,0,0,.35);
+  --shadow-lg:0 10px 40px rgba(0,0,0,.5);
+}
+[data-theme="dark"] .card{background:rgba(15,23,42,.7)}
+[data-theme="dark"] .site-header{background:rgba(9,14,25,.82)}
+[data-theme="dark"] .theme-toggle{background:rgba(15,23,42,.6)}
+[data-theme="dark"] .menu-toggle span{background:var(--ink)}
+[data-theme="dark"] .btn-outline{background:rgba(15,23,42,.6)}
+[data-theme="dark"] .hero{background:
+  radial-gradient(circle at 15% 20%,rgba(37,99,235,.16) 0%,transparent 45%),
+  radial-gradient(circle at 85% 10%,rgba(124,58,237,.14) 0%,transparent 40%),var(--bg)}
+[data-theme="dark"] .form-field input,[data-theme="dark"] .form-field textarea{background:#0e1726}
+[data-theme="dark"] .form-field.is-invalid input,[data-theme="dark"] .form-field.is-invalid textarea{background:#1c0a0a;border-color:#b91c1c}
+[data-theme="dark"] .form-status.is-success{background:#052e16;border-color:#14532d;color:#4ade80}
+[data-theme="dark"] .form-status.is-error{background:#450a0a;border-color:#7f1d1d;color:#f87171}
+[data-theme="dark"] .card-note .note-rule{background:#2a2206}
+[data-theme="dark"] .code-tab{background:#1e293b;border-color:#24304a;color:#9ca3af}
+[data-theme="dark"] .main-nav{background:rgba(9,14,25,.97)}

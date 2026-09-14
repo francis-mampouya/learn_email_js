@@ -1,308 +1,830 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="EmailJS Lab — apprends progressivement à envoyer des emails avec EmailJS en HTML, CSS et JavaScript vanilla. Tutoriel interactif, laboratoire de test et checklist.">
-  <meta property="og:title" content="EmailJS Lab — Apprends EmailJS pas à pas">
-  <meta property="og:description" content="Un laboratoire pédagogique pour apprendre à envoyer des emails avec EmailJS sans backend.">
-  <meta property="og:type" content="website">
-  <title>EmailJS Lab — Apprends à envoyer des emails avec EmailJS</title>
-  <link rel="stylesheet" href="css/style.css">
-  <script>if(localStorage.getItem('emailjsLabTheme'))document.documentElement.dataset.theme=localStorage.getItem('emailjsLabTheme');</script>
-  <script defer src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-  <script defer src="js/app.js"></script>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="EmailJS Lab — Apprenez à envoyer des emails depuis votre navigateur avec EmailJS. Tutoriel interactif, laboratoire de test, guide de dépannage et checklist de progression."
+    />
+    <meta name="author" content="Francis Mampouya" />
+    <meta name="theme-color" content="#007FFF" />
+    <meta
+      property="og:title"
+      content="EmailJS Lab — Apprendre EmailJS pas à pas"
+    />
+    <meta
+      property="og:description"
+      content="Laboratoire pédagogique pour maîtriser l'envoi d'emails côté client avec EmailJS, sans backend."
+    />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://github.com/francis-mampouya/learn_email_js"
+    />
+    <link
+      rel="canonical"
+      href="https://github.com/francis-mampouya/learn_email_js"
+    />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✉️</text></svg>"
+    />
+    <title>EmailJS Lab — Apprendre à envoyer des emails avec EmailJS</title>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+    <link rel="stylesheet" href="css/style.css" />
+    <script>
+      (function () {
+        try {
+          var t = localStorage.getItem("emailjsLabTheme");
+          if (t === "dark" || t === "light")
+            document.documentElement.dataset.theme = t;
+        } catch (e) {}
+      })();
+    </script>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+    ></script>
+    <script defer src="js/app.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Aller au contenu principal</a>
 
-  <!-- ========== HEADER ========== -->
-  <header class="site-header" id="top">
-    <div class="container header-inner">
-      <a href="#top" class="brand" aria-label="EmailJS Lab — accueil">
-        <span class="brand-badge" aria-hidden="true">✉</span>
-        <span class="brand-text">EmailJS <strong>Lab</strong></span>
-      </a>
-
-      <nav class="main-nav" id="mainNav" aria-label="Navigation principale">
-        <button class="nav-link" data-target="#intro">Introduction</button>
-        <button class="nav-link" data-target="#parcours">Parcours</button>
-        <button class="nav-link" data-target="#configuration">Configuration</button>
-        <button class="nav-link" data-target="#labo">Laboratoire</button>
-        <button class="nav-link" data-target="#debug">Débogage</button>
-        <a class="nav-link nav-link-github" href="https://github.com/francis-mampouya/learn_email_js" target="_blank" rel="noopener">
-          GitHub
-          <svg aria-hidden="true" width="14" height="14" viewBox="0 0 16 16"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+    <!-- ========== HEADER ========== -->
+    <header class="site-header" id="top">
+      <div class="container header-inner">
+        <a href="#top" class="brand" aria-label="EmailJS Lab — accueil">
+          <span class="brand-mark" aria-hidden="true">
+            <svg
+              viewBox="0 0 24 24"
+              width="20"
+              height="20"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <rect x="2" y="4" width="20" height="16" rx="2" />
+              <path d="m22 7-10 6L2 7" />
+            </svg>
+          </span>
+          <span class="brand-text"
+            >EmailJS<span class="brand-accent">Lab</span></span
+          >
         </a>
-      </nav>
 
-      <button class="theme-toggle" id="themeToggle" aria-label="Basculer thème clair / sombre">🌙</button>
-      <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mainNav" aria-label="Ouvrir le menu">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </header>
+        <nav class="main-nav" id="mainNav" aria-label="Navigation principale">
+          <button class="nav-link" type="button" data-target="#intro">
+            Introduction
+          </button>
+          <button class="nav-link" type="button" data-target="#parcours">
+            Parcours
+          </button>
+          <button class="nav-link" type="button" data-target="#configuration">
+            Configuration
+          </button>
+          <button class="nav-link" type="button" data-target="#labo">
+            Laboratoire
+          </button>
+          <button class="nav-link" type="button" data-target="#debug">
+            Dépannage
+          </button>
+          <button class="nav-link" type="button" data-target="#faq">FAQ</button>
+          <a
+            class="nav-link nav-link-github"
+            href="https://github.com/francis-mampouya/learn_email_js"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <svg aria-hidden="true" width="16" height="16" viewBox="0 0 16 16">
+              <path
+                fill="currentColor"
+                d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"
+              />
+            </svg>
+            <span>GitHub</span>
+          </a>
+        </nav>
 
-  <main>
-    <!-- ========== HERO ========== -->
-    <section class="hero">
-      <div class="container">
-        <div class="hero-badge">HTML5 · CSS3 · JavaScript vanilla · EmailJS</div>
-        <h1>Apprends à envoyer des emails avec EmailJS</h1>
-        <p class="hero-sub">
-          Un laboratoire pédagogique complet : comprends le fonctionnement d'EmailJS,
-          configure ton service, puis envoie ton premier email avec un simple formulaire —
-          sans backend, sans framework.
-        </p>
-        <div class="hero-actions">
-          <button class="btn btn-primary" data-target="#parcours">Commencer</button>
-          <button class="btn btn-outline" data-target="#labo">Tester le formulaire</button>
+        <div class="header-actions">
+          <button
+            class="icon-btn"
+            id="themeToggle"
+            type="button"
+            aria-label="Basculer le thème clair / sombre"
+            aria-pressed="false"
+          >
+            <svg
+              class="icon-moon"
+              aria-hidden="true"
+              viewBox="0 0 24 24"
+              width="18"
+              height="18"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+            </svg>
+            <svg
+              class="icon-sun"
+              aria-hidden="true"
+              viewBox="0 0 24 24"
+              width="18"
+              height="18"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <circle cx="12" cy="12" r="4" />
+              <path
+                d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"
+              />
+            </svg>
+          </button>
+          <button
+            class="menu-toggle"
+            id="menuToggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="mainNav"
+            aria-label="Ouvrir le menu"
+          >
+            <span></span><span></span><span></span>
+          </button>
         </div>
       </div>
-    </section>
+    </header>
 
-    <!-- ========== INTRODUCTION ========== -->
-    <section class="section" id="intro">
-      <div class="container">
-        <h2 class="section-title">Introduction à EmailJS</h2>
-        <div class="intro-grid">
-          <article class="card">
-            <div class="card-icon" aria-hidden="true">❓</div>
-            <h3>Qu'est-ce qu'EmailJS ?</h3>
-            <p>EmailJS est un service qui te permet d'envoyer des emails directement depuis du JavaScript côté client. Tu n'as pas besoin de créer un backend (serveur).</p>
-          </article>
-          <article class="card">
-            <div class="card-icon" aria-hidden="true">🎯</div>
-            <h3>À quoi ça sert ?</h3>
-            <p>Envoyer des emails depuis un formulaire de contact, un panier, une newsletter… le tout en quelques lignes de JavaScript, directement depuis ta page web.</p>
-          </article>
-          <article class="card">
-            <div class="card-icon" aria-hidden="true">⚙️</div>
-            <h3>Comment ça fonctionne ?</h3>
-            <p>Tu configures un <em>service</em> (ex. Gmail), un <em>template</em> (modèle d'email) sur le site EmailJS, puis tu connectes ton formulaire via le SDK JavaScript.</p>
-          </article>
-          <article class="card card-accent">
-            <div class="card-icon" aria-hidden="true">⚖️</div>
-            <h3>Avantages &amp; limites</h3>
-            <p><strong>Avantages :</strong> zéro backend, mise en place rapide, idéal pour apprendre et prototyper.<br>
-               <strong>Limites :</strong> base gratuite limitée en volume (≈ 200 emails/mois, 1 requête/sec), expose une clé publique, ne remplace pas une solution pro à très haut volume.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- ========== PARCOURS D'APPRENTISSAGE ========== -->
-    <section class="section section-alt" id="parcours">
-      <div class="container">
-        <h2 class="section-title">Parcours d'apprentissage</h2>
-        <p class="section-sub">10 étapes progressives. Suis-les dans l'ordre : chaque étape s'appuie sur la précédente.</p>
-        <div class="steps-grid" id="stepsGrid"></div>
-        <div class="step-detail card" id="stepDetail" hidden>
-          <button class="step-detail-close" id="stepDetailClose" aria-label="Fermer le détail de l'étape">✕</button>
-          <div id="stepDetailBody"></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ========== CONFIGURATION EMAILJS ========== -->
-    <section class="section" id="configuration">
-      <div class="container">
-        <h2 class="section-title">Configuration EmailJS</h2>
-        <div class="config-grid">
-          <div class="card form-card">
-            <h3>Identifiants du laboratoire</h3>
-            <p class="form-hint">Renseigne tes identifiants — ils sont stockés <strong>uniquement dans ton navigateur</strong> (localStorage), jamais exposés publiquement ici.</p>
-            <form id="configForm" novalidate>
-              <div class="form-field">
-                <label for="publicKey">Public Key</label>
-                <input type="text" id="publicKey" name="publicKey" placeholder="YOUR_PUBLIC_KEY" autocomplete="off">
-                <small class="field-note">À copier dans : EmailJS → Account → General → Public Key</small>
-              </div>
-              <div class="form-field">
-                <label for="serviceId">Service ID</label>
-                <input type="text" id="serviceId" name="serviceId" placeholder="YOUR_SERVICE_ID" autocomplete="off">
-                <small class="field-note">Email Services → le nom de ton service (ex. <code>service_xxxx</code>)</small>
-              </div>
-              <div class="form-field">
-                <label for="templateId">Template ID</label>
-                <input type="text" id="templateId" name="templateId" placeholder="YOUR_TEMPLATE_ID" autocomplete="off">
-                <small class="field-note">Email Templates → l'identifiant de ton modèle (ex. <code>template_xxxx</code>)</small>
-              </div>
-              <button type="submit" class="btn btn-primary btn-block">Enregistrer les identifiants</button>
-              <button type="button" class="btn btn-ghost btn-block" id="clearConfigBtn">Effacer</button>
-              <div class="form-status" id="configStatus" role="status" aria-live="polite"></div>
-            </form>
-          </div>
-          <aside class="card card-note">
-            <h3>⚠️ Public vs. Secret</h3>
-            <p>La <strong>Public Key</strong> est faite <em>pour être visible</em> dans ton code JavaScript. C'est normal : elle identifie l'expéditeur.</p>
-            <p>En revanche tu ne disposes <strong>d'aucune clé secrète côté navigateur</strong> avec EmailJS. Si on te demande d'afficher un secret dans le front, arrête-toi.</p>
-            <p class="note-rule"><strong>Règle d'or :</strong> ne mets jamais une clé privée côté client. Un navigateur est visible par tous.</p>
-          </aside>
-        </div>
-      </div>
-    </section>
-
-    <!-- ========== LABORATOIRE ========== -->
-    <section class="section section-alt" id="labo">
-      <div class="container">
-        <h2 class="section-title">Laboratoire — envoie un vrai email</h2>
-        <p class="section-sub">Remplis le formulaire et envoie le message via EmailJS. Observe les états : chargement, succès, erreur.</p>
-        <div class="lab-grid">
-          <form class="card form-card" id="labForm" novalidate>
-            <div class="form-field">
-              <label for="labName">Nom</label>
-              <input type="text" id="labName" name="from_name" placeholder="Ton nom" autocomplete="name" required>
-            </div>
-            <div class="form-field">
-              <label for="labEmail">Email</label>
-              <input type="email" id="labEmail" name="reply_to" placeholder="ton@email.com" autocomplete="email" required>
-            </div>
-            <div class="form-field">
-              <label for="labSubject">Sujet</label>
-              <input type="text" id="labSubject" name="subject" placeholder="Le sujet de ton message" required>
-            </div>
-            <div class="form-field">
-              <label for="labMessage">Message</label>
-              <textarea id="labMessage" name="message" rows="4" placeholder="Ton message…" required></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary btn-block" id="sendBtn">
-              <span class="btn-label">Envoyer le message</span>
-              <span class="send-spinner" aria-hidden="true"></span>
+    <main id="main">
+      <!-- ========== HERO ========== -->
+      <section class="hero">
+        <div class="container hero-inner">
+          <p class="hero-eyebrow">
+            <span class="dot" aria-hidden="true"></span>
+            HTML5 · CSS3 · JavaScript vanilla · EmailJS v4
+          </p>
+          <h1>
+            Maîtrisez l'envoi d'emails
+            <span class="text-accent">côté client</span> avec EmailJS
+          </h1>
+          <p class="hero-sub">
+            Un laboratoire pédagogique complet pour comprendre EmailJS,
+            configurer votre service, puis envoyer votre premier email depuis un
+            simple formulaire — <strong>sans backend, sans framework</strong>.
+          </p>
+          <div class="hero-actions">
+            <button
+              class="btn btn-primary"
+              type="button"
+              data-target="#parcours"
+            >
+              Commencer le parcours
+              <svg
+                aria-hidden="true"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
             </button>
-            <div class="form-status" id="formStatus" role="status" aria-live="polite"></div>
-          </form>
-          <aside class="card">
-            <h3>Comment ça marche ?</h3>
-            <ol class="mini-list">
-              <li>Les champs ont un attribut <code>name</code> qui correspond aux variables du template.</li>
-              <li>Le SDK collecte automatiquement ces valeurs avec <code>sendForm()</code>.</li>
-              <li>Chaque champ est validé en JavaScript avant l'envoi.</li>
-              <li>Le bouton change d'état (chargement / succès / erreur).</li>
-            </ol>
-            <p class="form-hint">Le template EmailJS doit contenir les variables : <code>from_name</code>, <code>reply_to</code>, <code>subject</code>, <code>message</code>.</p>
-          </aside>
-        </div>
-      </div>
-    </section>
-
-    <!-- ========== CODE EXEMPLE ========== -->
-    <section class="section" id="code">
-      <div class="container">
-        <h2 class="section-title">Code exemple</h2>
-        <p class="section-sub">Le code réellement utilisé par ce laboratoire. Copie-le et adapte-le à ton projet.</p>
-        <div class="code-tabs">
-          <button class="code-tab is-active" data-tab="html">HTML</button>
-          <button class="code-tab" data-tab="js">JavaScript</button>
-        </div>
-        <div class="code-card">
-          <div class="code-header">
-            <span class="code-filename" id="codeFilename">index.html</span>
-            <button class="btn btn-ghost btn-sm" id="copyBtn">Copier</button>
+            <button class="btn btn-outline" type="button" data-target="#labo">
+              Tester le laboratoire
+            </button>
           </div>
-          <pre id="codeHtml" class="code-block" tabindex="0"><code>&lt;form id="labForm"&gt;
-  &lt;input type="text" name="from_name" /&gt;
-  &lt;input type="email" name="reply_to" /&gt;
-  &lt;input type="text" name="subject" /&gt;
-  &lt;textarea name="message"&gt;&lt;/textarea&gt;
-  &lt;button type="submit"&gt;Envoyer le message&lt;/button&gt;
+          <ul class="hero-stats" aria-label="Points clés du laboratoire">
+            <li><strong>10</strong><span>étapes guidées</span></li>
+            <li><strong>8</strong><span>erreurs décryptées</span></li>
+            <li><strong>0</strong><span>backend requis</span></li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ========== INTRODUCTION ========== -->
+      <section class="section" id="intro">
+        <div class="container">
+          <header class="section-head">
+            <p class="section-eyebrow">Introduction</p>
+            <h2 class="section-title">Qu'est-ce qu'EmailJS&nbsp;?</h2>
+            <p class="section-sub">
+              Comprendre les fondations avant d'écrire la première ligne de
+              code.
+            </p>
+          </header>
+
+          <div class="intro-grid">
+            <article class="card">
+              <div class="card-icon" aria-hidden="true">
+                <svg
+                  viewBox="0 0 24 24"
+                  width="22"
+                  height="22"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <circle cx="12" cy="12" r="10" />
+                  <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
+                  <path d="M12 17h.01" />
+                </svg>
+              </div>
+              <h3>Qu'est-ce qu'EmailJS&nbsp;?</h3>
+              <p>
+                EmailJS est un service tiers qui permet d'envoyer des emails
+                directement depuis du JavaScript côté client, sans écrire la
+                moindre ligne de code serveur.
+              </p>
+            </article>
+
+            <article class="card">
+              <div class="card-icon" aria-hidden="true">
+                <svg
+                  viewBox="0 0 24 24"
+                  width="22"
+                  height="22"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <circle cx="12" cy="12" r="10" />
+                  <circle cx="12" cy="12" r="6" />
+                  <circle cx="12" cy="12" r="2" />
+                </svg>
+              </div>
+              <h3>À quoi ça sert&nbsp;?</h3>
+              <p>
+                Formulaires de contact, newsletters, confirmations de commande,
+                notifications : tout ce qui nécessite un envoi d'email depuis
+                une page web.
+              </p>
+            </article>
+
+            <article class="card">
+              <div class="card-icon" aria-hidden="true">
+                <svg
+                  viewBox="0 0 24 24"
+                  width="22"
+                  height="22"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path
+                    d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"
+                  />
+                </svg>
+              </div>
+              <h3>Comment ça fonctionne&nbsp;?</h3>
+              <p>
+                Vous configurez un <em>service</em> (ex. Gmail), un
+                <em>template</em> (modèle d'email) sur le dashboard EmailJS,
+                puis vous connectez votre formulaire via le SDK JavaScript.
+              </p>
+            </article>
+
+            <article class="card card-accent">
+              <div class="card-icon" aria-hidden="true">
+                <svg
+                  viewBox="0 0 24 24"
+                  width="22"
+                  height="22"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M12 2 4 6v6c0 5 3.5 9 8 10 4.5-1 8-5 8-10V6l-8-4z" />
+                </svg>
+              </div>
+              <h3>Avantages &amp; limites</h3>
+              <p>
+                <strong>Avantages :</strong> zéro backend, mise en place rapide,
+                idéal pour apprendre et prototyper.
+              </p>
+              <p>
+                <strong>Limites :</strong> plan gratuit limité (≈ 200
+                emails/mois, 1 requête/sec), clé publique exposée, non adapté à
+                très haut volume.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== PARCOURS ========== -->
+      <section class="section section-alt" id="parcours">
+        <div class="container">
+          <header class="section-head">
+            <p class="section-eyebrow">Parcours</p>
+            <h2 class="section-title">10 étapes progressives</h2>
+            <p class="section-sub">
+              Suivez-les dans l'ordre : chaque étape s'appuie sur la précédente.
+            </p>
+          </header>
+
+          <ol class="steps-grid" id="stepsGrid"></ol>
+
+          <div class="step-detail card" id="stepDetail" hidden>
+            <button
+              class="step-detail-close"
+              id="stepDetailClose"
+              type="button"
+              aria-label="Fermer le détail de l'étape"
+            >
+              <svg
+                aria-hidden="true"
+                viewBox="0 0 24 24"
+                width="16"
+                height="16"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M18 6 6 18M6 6l12 12" />
+              </svg>
+            </button>
+            <div id="stepDetailBody" tabindex="-1"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== CONFIGURATION ========== -->
+      <section class="section" id="configuration">
+        <div class="container">
+          <header class="section-head">
+            <p class="section-eyebrow">Configuration</p>
+            <h2 class="section-title">Vos identifiants EmailJS</h2>
+            <p class="section-sub">
+              Stockés
+              <strong>uniquement dans votre navigateur</strong> (localStorage).
+              Rien n'est envoyé sur un serveur tiers.
+            </p>
+          </header>
+
+          <div class="config-grid">
+            <div class="card form-card">
+              <h3>Identifiants du laboratoire</h3>
+              <p class="form-hint">
+                Ces valeurs servent uniquement à alimenter le formulaire de test
+                ci-dessous.
+              </p>
+
+              <form id="configForm" novalidate>
+                <div class="form-field">
+                  <label for="publicKey">Public Key</label>
+                  <input
+                    type="text"
+                    id="publicKey"
+                    name="publicKey"
+                    placeholder="YOUR_PUBLIC_KEY"
+                    autocomplete="off"
+                    spellcheck="false"
+                    inputmode="text"
+                  />
+                  <small class="field-note"
+                    >EmailJS → Account → General → Public Key</small
+                  >
+                </div>
+
+                <div class="form-field">
+                  <label for="serviceId">Service ID</label>
+                  <input
+                    type="text"
+                    id="serviceId"
+                    name="serviceId"
+                    placeholder="YOUR_SERVICE_ID"
+                    autocomplete="off"
+                    spellcheck="false"
+                  />
+                  <small class="field-note"
+                    >Email Services → le nom de votre service (ex.
+                    <code>service_xxxx</code>)</small
+                  >
+                </div>
+
+                <div class="form-field">
+                  <label for="templateId">Template ID</label>
+                  <input
+                    type="text"
+                    id="templateId"
+                    name="templateId"
+                    placeholder="YOUR_TEMPLATE_ID"
+                    autocomplete="off"
+                    spellcheck="false"
+                  />
+                  <small class="field-note"
+                    >Email Templates → l'identifiant de votre modèle (ex.
+                    <code>template_xxxx</code>)</small
+                  >
+                </div>
+
+                <div class="form-actions">
+                  <button type="submit" class="btn btn-primary btn-block">
+                    Enregistrer les identifiants
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-ghost btn-block"
+                    id="clearConfigBtn"
+                  >
+                    Effacer
+                  </button>
+                </div>
+
+                <div
+                  class="form-status"
+                  id="configStatus"
+                  role="status"
+                  aria-live="polite"
+                ></div>
+              </form>
+            </div>
+
+            <aside class="card card-note" aria-labelledby="note-title">
+              <h3 id="note-title">
+                <svg
+                  aria-hidden="true"
+                  viewBox="0 0 24 24"
+                  width="18"
+                  height="18"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path
+                    d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"
+                  />
+                  <path d="M12 9v4M12 17h.01" />
+                </svg>
+                Public vs. Secret
+              </h3>
+              <p>
+                La <strong>Public Key</strong> est
+                <em>faite pour être visible</em> dans votre code JavaScript.
+                Elle identifie simplement l'expéditeur.
+              </p>
+              <p>
+                En revanche, avec EmailJS,
+                <strong
+                  >aucune clé secrète n'est utilisée côté navigateur</strong
+                >. Si on vous demande d'afficher un secret dans le front,
+                arrêtez-vous immédiatement.
+              </p>
+              <p class="note-rule">
+                <strong>Règle d'or :</strong> ne mettez jamais une clé privée
+                côté client. Tout navigateur est visible par n'importe qui.
+              </p>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== LABORATOIRE ========== -->
+      <section class="section section-alt" id="labo">
+        <div class="container">
+          <header class="section-head">
+            <p class="section-eyebrow">Laboratoire</p>
+            <h2 class="section-title">Envoyez un vrai email</h2>
+            <p class="section-sub">
+              Remplissez le formulaire et observez les états : chargement,
+              succès, erreur.
+            </p>
+          </header>
+
+          <div class="lab-grid">
+            <form class="card form-card" id="labForm" novalidate>
+              <div class="form-field">
+                <label for="labName">Nom</label>
+                <input
+                  type="text"
+                  id="labName"
+                  name="from_name"
+                  placeholder="Votre nom"
+                  autocomplete="name"
+                  required
+                  minlength="2"
+                />
+              </div>
+
+              <div class="form-field">
+                <label for="labEmail">Email</label>
+                <input
+                  type="email"
+                  id="labEmail"
+                  name="reply_to"
+                  placeholder="vous@exemple.com"
+                  autocomplete="email"
+                  required
+                />
+              </div>
+
+              <div class="form-field">
+                <label for="labSubject">Sujet</label>
+                <input
+                  type="text"
+                  id="labSubject"
+                  name="subject"
+                  placeholder="Le sujet de votre message"
+                  required
+                  minlength="3"
+                />
+              </div>
+
+              <div class="form-field">
+                <label for="labMessage">Message</label>
+                <textarea
+                  id="labMessage"
+                  name="message"
+                  rows="5"
+                  placeholder="Votre message…"
+                  required
+                  minlength="10"
+                ></textarea>
+              </div>
+
+              <button
+                type="submit"
+                class="btn btn-primary btn-block"
+                id="sendBtn"
+              >
+                <span class="btn-label">Envoyer le message</span>
+                <span class="send-spinner" aria-hidden="true"></span>
+              </button>
+
+              <div
+                class="form-status"
+                id="formStatus"
+                role="status"
+                aria-live="polite"
+              ></div>
+            </form>
+
+            <aside class="card card-aside">
+              <h3>Comment ça marche&nbsp;?</h3>
+              <ol class="mini-list">
+                <li>
+                  Les champs possèdent un attribut
+                  <code>name</code> correspondant aux variables du template.
+                </li>
+                <li>
+                  Le SDK collecte automatiquement ces valeurs avec
+                  <code>sendForm()</code>.
+                </li>
+                <li>
+                  Chaque champ est validé en JavaScript <em>avant</em> l'envoi.
+                </li>
+                <li>
+                  Le bouton reflète l'état : chargement / succès / erreur.
+                </li>
+              </ol>
+              <p class="form-hint">
+                Variables attendues dans votre template :
+                <code>from_name</code>, <code>reply_to</code>,
+                <code>subject</code>, <code>message</code>.
+              </p>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== CODE ========== -->
+      <section class="section" id="code">
+        <div class="container">
+          <header class="section-head">
+            <p class="section-eyebrow">Code source</p>
+            <h2 class="section-title">Exemple concret</h2>
+            <p class="section-sub">
+              Le code réellement utilisé par ce laboratoire. Copiez-le et
+              adaptez-le à votre projet.
+            </p>
+          </header>
+
+          <div class="code-tabs" role="tablist" aria-label="Choix du langage">
+            <button
+              class="code-tab is-active"
+              type="button"
+              role="tab"
+              aria-selected="true"
+              aria-controls="codeHtml"
+              data-tab="html"
+            >
+              HTML
+            </button>
+            <button
+              class="code-tab"
+              type="button"
+              role="tab"
+              aria-selected="false"
+              aria-controls="codeJs"
+              data-tab="js"
+            >
+              JavaScript
+            </button>
+          </div>
+
+          <div class="code-card">
+            <div class="code-header">
+              <span class="code-filename" id="codeFilename">index.html</span>
+              <button class="btn btn-ghost btn-sm" id="copyBtn" type="button">
+                <svg
+                  aria-hidden="true"
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <rect x="9" y="9" width="13" height="13" rx="2" />
+                  <path
+                    d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"
+                  />
+                </svg>
+                Copier
+              </button>
+            </div>
+            <pre
+              id="codeHtml"
+              class="code-block"
+              tabindex="0"
+              role="tabpanel"
+            ><code>&lt;!-- Formulaire HTML minimal --&gt;
+&lt;form id="labForm"&gt;
+  &lt;input type="text"  name="from_name" placeholder="Nom" /&gt;
+  &lt;input type="email" name="reply_to"  placeholder="Email" /&gt;
+  &lt;input type="text"  name="subject"   placeholder="Sujet" /&gt;
+  &lt;textarea           name="message"   placeholder="Message"&gt;&lt;/textarea&gt;
+  &lt;button type="submit"&gt;Envoyer&lt;/button&gt;
 &lt;/form&gt;</code></pre>
-          <pre id="codeJs" class="code-block" hidden><code>// Initialise EmailJS avec ta clé publique
-emailjs.init({
-  publicKey: 'YOUR_PUBLIC_KEY',
-});
+            <pre
+              id="codeJs"
+              class="code-block"
+              tabindex="0"
+              role="tabpanel"
+              hidden
+            ><code>// Initialisation d'EmailJS avec la Public Key
+emailjs.init({ publicKey: 'YOUR_PUBLIC_KEY' });
 
 document.getElementById('labForm')
-  .addEventListener('submit', (e) =&gt; {
-  e.preventDefault();
+  .addEventListener('submit', async (e) =&gt; {
+    e.preventDefault();
 
-  emailjs.sendForm(
-    'YOUR_SERVICE_ID', // Service ID
-    'YOUR_TEMPLATE_ID', // Template ID
-    '#labForm'
-  ).then(() =&gt; {
-    console.log('Email envoyé !');
-  }, (error) =&gt; {
-    console.error('Erreur :', error);
-  });
-});</code></pre>
+    try {
+      const res = await emailjs.sendForm(
+        'YOUR_SERVICE_ID',   // Service ID
+        'YOUR_TEMPLATE_ID',  // Template ID
+        '#labForm'
+      );
+      console.log('Email envoyé !', res.status, res.text);
+    } catch (err) {
+      console.error('Erreur :', err);
+    }
+  });</code></pre>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- ========== DEBUG / ERREURS ========== -->
-    <section class="section section-alt" id="debug">
-      <div class="container">
-        <h2 class="section-title">Debug — erreurs fréquentes</h2>
-        <div class="debug-grid" id="debugList"></div>
-      </div>
-    </section>
+      <!-- ========== DEBUG ========== -->
+      <section class="section section-alt" id="debug">
+        <div class="container">
+          <header class="section-head">
+            <p class="section-eyebrow">Dépannage</p>
+            <h2 class="section-title">Erreurs fréquentes</h2>
+            <p class="section-sub">
+              Les 8 erreurs les plus courantes et leur solution immédiate.
+            </p>
+          </header>
+          <div class="debug-grid" id="debugList"></div>
+        </div>
+      </section>
 
-    <!-- ========== CHECKLIST ========== -->
-    <section class="section" id="checklist">
-      <div class="container">
-        <h2 class="section-title">Checklist de progression</h2>
-        <p class="section-sub">Ta progression est sauvegardée localement dans ton navigateur (localStorage).</p>
-        <form class="card checklist" id="checklistForm">
-          <label class="check-item">
-            <input type="checkbox" data-check="Compte EmailJS créé">
-            <span>Compte EmailJS créé</span>
-          </label>
-          <label class="check-item">
-            <input type="checkbox" data-check="Service configuré">
-            <span>Service configuré</span>
-          </label>
-          <label class="check-item">
-            <input type="checkbox" data-check="Template créé">
-            <span>Template créé</span>
-          </label>
-          <label class="check-item">
-            <input type="checkbox" data-check="Public Key récupérée">
-            <span>Public Key récupérée</span>
-          </label>
-          <label class="check-item">
-            <input type="checkbox" data-check="Formulaire HTML créé">
-            <span>Formulaire HTML créé</span>
-          </label>
-          <label class="check-item">
-            <input type="checkbox" data-check="EmailJS installé">
-            <span>EmailJS installé</span>
-          </label>
-          <label class="check-item">
-            <input type="checkbox" data-check="Premier email envoyé">
-            <span>Premier email envoyé</span>
-          </label>
-          <label class="check-item">
-            <input type="checkbox" data-check="Gestion des erreurs ajoutée">
-            <span>Gestion des erreurs ajoutée</span>
-          </label>
-        </form>
-        <p class="checklist-progress"><span id="checklistDone">0</span> / 8 étapes validées</p>
-      </div>
-    </section>
+      <!-- ========== CHECKLIST ========== -->
+      <section class="section" id="checklist">
+        <div class="container">
+          <header class="section-head">
+            <p class="section-eyebrow">Progression</p>
+            <h2 class="section-title">Checklist de maîtrise</h2>
+            <p class="section-sub">
+              Votre progression est sauvegardée localement dans votre
+              navigateur.
+            </p>
+          </header>
 
-    <!-- ========== FAQ ========== -->
-    <section class="section section-alt" id="faq">
-      <div class="container">
-        <h2 class="section-title">FAQ</h2>
-        <div class="faq-list card" id="faqList"></div>
-      </div>
-    </section>
-  </main>
+          <form
+            class="card checklist"
+            id="checklistForm"
+            aria-describedby="checklistProgress"
+          >
+            <label class="check-item">
+              <input type="checkbox" data-check="Compte EmailJS créé" />
+              <span>Compte EmailJS créé</span>
+            </label>
+            <label class="check-item">
+              <input type="checkbox" data-check="Service configuré" />
+              <span>Service configuré (Gmail, Outlook…)</span>
+            </label>
+            <label class="check-item">
+              <input type="checkbox" data-check="Template créé" />
+              <span>Template créé avec les variables</span>
+            </label>
+            <label class="check-item">
+              <input type="checkbox" data-check="Public Key récupérée" />
+              <span>Public Key récupérée</span>
+            </label>
+            <label class="check-item">
+              <input type="checkbox" data-check="Formulaire HTML créé" />
+              <span>Formulaire HTML avec attributs <code>name</code></span>
+            </label>
+            <label class="check-item">
+              <input type="checkbox" data-check="SDK EmailJS installé" />
+              <span>SDK EmailJS installé via CDN</span>
+            </label>
+            <label class="check-item">
+              <input type="checkbox" data-check="Premier email envoyé" />
+              <span>Premier email envoyé avec succès</span>
+            </label>
+            <label class="check-item">
+              <input type="checkbox" data-check="Gestion des erreurs ajoutée" />
+              <span>Gestion des erreurs ajoutée</span>
+            </label>
+          </form>
+          <p
+            class="checklist-progress"
+            id="checklistProgress"
+            role="status"
+            aria-live="polite"
+          >
+            <span id="checklistDone">0</span> / 8 étapes validées
+          </p>
+        </div>
+      </section>
 
-  <!-- ========== FOOTER ========== -->
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <div class="footer-brand">
-        <span class="brand-text">EmailJS <strong>Lab</strong></span>
-        <p>Un projet pédagogique pour apprendre EmailJS.</p>
-      </div>
-      <nav class="footer-links" aria-label="Liens du pied de page">
-        <a href="https://www.emailjs.com/docs/" target="_blank" rel="noopener">Documentation EmailJS</a>
-        <a href="https://github.com/francis-mampouya/learn_email_js" target="_blank" rel="noopener">GitHub</a>
-      </nav>
-    </div>
-    <p class="footer-legal">Projet pédagogique non affilié officiellement à EmailJS. Nom et identité visuelle utilisés à des fins d'apprentissage.</p>
-  </footer>
+      <!-- ========== FAQ ========== -->
+      <section class="section section-alt" id="faq">
+        <div class="container">
+          <header class="section-head">
+            <p class="section-eyebrow">FAQ</p>
+            <h2 class="section-title">Questions fréquentes</h2>
+          </header>
+          <div class="faq-list card" id="faqList"></div>
+        </div>
+      </section>
+    </main>
 
-</body>
+    <!-- ========== FOOTER ========== -->
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <div class="footer-brand">
+          <span class="brand-text"
+            >EmailJS<span class="brand-accent">Lab</span></span
+          >
+          <p>Un projet pédagogique open source pour apprendre EmailJS.</p>
+        </div>
+        <nav class="footer-links" aria-label="Liens du pied de page">
+          <a
+            href="https://www.emailjs.com/docs/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Documentation EmailJS</a
+          >
+          <a
+            href="https://github.com/francis-mampouya/learn_email_js"
+            target="_blank"
+            rel="noopener noreferrer"
+            >GitHub</a
+          >
+          <a href="#top">Haut de page</a>
+        </nav>
+      </div>
+      <p class="footer-legal">
+        Projet pédagogique non affilié officiellement à EmailJS. Nom et identité
+        visuelle utilisés à des fins d'apprentissage.
+      </p>
+    </footer>
+  </body>
 </html>

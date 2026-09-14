@@ -428,6 +428,9 @@ function initScrollReveal() {
   );
 
   targets.forEach((el) => {
+    if (initScrollReveal.observed && initScrollReveal.observed.has(el)) return;
+    if (!initScrollReveal.observed) initScrollReveal.observed = new WeakSet();
+    initScrollReveal.observed.add(el);
     el.classList.add("reveal");
     observer.observe(el);
   });
@@ -1194,6 +1197,7 @@ window.EmailJSLab.reRenderAll = function () {
   renderDebug();
   renderFaq();
   if (window.EmailJSLab.quiz) window.EmailJSLab.quiz.renderQuiz();
+  initScrollReveal();
 };
 
 /* =========================================================================

@@ -377,7 +377,10 @@ code {
     color var(--transition),
     box-shadow var(--transition);
 }
-.nav-link-github:hover {
+.nav-link-github:hover,
+.nav-link.nav-link-github:hover,
+.nav-link-github:focus-visible,
+.nav-link.nav-link-github:focus-visible {
   background: var(--ej-orange-600);
   border-color: var(--ej-orange-600);
   color: #fff;

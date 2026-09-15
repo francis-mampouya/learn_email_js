@@ -134,8 +134,8 @@ const I18N = {
     "footer.legal":
       "Projet pédagogique non affilié officiellement à EmailJS. Nom et identité visuelle utilisés à des fins d'apprentissage.",
 
-    builtwith: "Fait avec",
-    "builtwith.by": "par Francis",
+    "builtwith": "Projet open source",
+    "builtwith.by": "MIT",
 
     "shortcuts.title": "Raccourcis clavier",
     "shortcuts.cmdk": "Palette de commandes",
@@ -273,8 +273,8 @@ const I18N = {
     "footer.legal":
       "Educational project not officially affiliated with EmailJS. Name and visual identity used for learning purposes.",
 
-    builtwith: "Made with",
-    "builtwith.by": "by Francis",
+    "builtwith": "Open source",
+    "builtwith.by": "MIT",
 
     "shortcuts.title": "Keyboard shortcuts",
     "shortcuts.cmdk": "Command palette",

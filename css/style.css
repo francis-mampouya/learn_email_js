@@ -1616,6 +1616,13 @@ code {
   transform: translateY(-2px);
   box-shadow: var(--shadow-lg);
 }
+.built-with svg {
+  flex-shrink: 0;
+  opacity: 0.85;
+}
+.built-with-sep {
+  color: var(--ej-slate-500);
+}
 
 .fab {
   position: fixed;

@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://francis-mampouya.github.io/learn_email_js/sitemap.xml
+Sitemap: https://learnemailjs.vercel.app/sitemap.xml

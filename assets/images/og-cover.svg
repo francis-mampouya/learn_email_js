@@ -26,20 +26,20 @@
   </text>
 
   <text x="80" y="300" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="76" font-weight="800" fill="#FFFFFF">
-    MaÃ®trisez l'envoi d'emails
+    Maîtrisez l'envoi d'emails
   </text>
   <text x="80" y="392" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="76" font-weight="800" fill="#4DA6FF">
-    cÃ´tÃ© client
+    côté client
   </text>
 
   <text x="80" y="460" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="28" fill="#94A3B8">
-    Tutoriel interactif Â· Laboratoire Â· Quiz Â· DÃ©pannage
+    Tutoriel interactif · Laboratoire · Quiz · Dépannage
   </text>
 
   <g transform="translate(80,530)">
     <rect width="360" height="52" rx="26" fill="#FF8434" opacity="0.15" stroke="#FF8434" stroke-width="1"/>
     <text x="24" y="34" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="20" font-weight="600" fill="#4DA6FF">
-      francis-mampouya.github.io
+      learnemailjs.vercel.app
     </text>
   </g>
 

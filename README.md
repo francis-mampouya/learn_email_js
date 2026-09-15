@@ -2,7 +2,7 @@
 
 > Laboratoire pédagogique interactif pour apprendre à envoyer des emails côté client avec **EmailJS** — sans backend.
 
-[![Demo](https://img.shields.io/badge/demo-live-007FFF?style=for-the-badge)](https://francis-mampouya.github.io/learn_email_js)
+[![Demo](https://img.shields.io/badge/demo-live-007FFF?style=for-the-badge)](https://learnemailjs.vercel.app)
 [![License](https://img.shields.io/badge/license-MIT-green?style=for-the-badge)](LICENSE)
 [![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)](.)
 [![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](.)
@@ -27,7 +27,7 @@
 
 ## 🚀 Démo en ligne
 
-👉 **[https://francis-mampouya.github.io/learn_email_js](https://francis-mampouya.github.io/learn_email_js)**
+👉 **[https://learnemailjs.vercel.app](https://learnemailjs.vercel.app)**
 
 ---
 

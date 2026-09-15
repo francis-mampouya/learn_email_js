@@ -272,7 +272,38 @@
               aria-haspopup="true"
               aria-expanded="false"
             >
-              <span class="lang-flag" id="langFlag">🇫🇷</span>
+              <span class="lang-flag" id="langFlag">
+                <svg
+                  class="flag-fr"
+                  viewBox="0 0 60 40"
+                  width="18"
+                  height="12"
+                  aria-hidden="true"
+                  focusable="false"
+                >
+                  <rect width="60" height="40" fill="#fff" />
+                  <rect width="20" height="40" fill="#0055a4" />
+                  <rect x="40" width="20" height="40" fill="#ef4135" />
+                </svg>
+                <svg
+                  class="flag-en"
+                  viewBox="0 0 60 40"
+                  width="18"
+                  height="12"
+                  aria-hidden="true"
+                  focusable="false"
+                >
+                  <rect width="60" height="40" fill="#012169" />
+                  <path d="M0 0 60 40M60 0 0 40" stroke="#fff" stroke-width="8" />
+                  <path
+                    d="M0 0 60 40M60 0 0 40"
+                    stroke="#c8102e"
+                    stroke-width="4"
+                  />
+                  <path d="M30 0V40M0 20H60" stroke="#fff" stroke-width="12" />
+                  <path d="M30 0V40M0 20H60" stroke="#c8102e" stroke-width="6" />
+                </svg>
+              </span>
               <span class="lang-code" id="langLabel">FR</span>
               <svg
                 class="lang-chev"
@@ -297,7 +328,19 @@
                   class="lang-option"
                   data-lang="fr"
                 >
-                  <span class="lang-flag">🇫🇷</span>
+                  <span class="lang-flag">
+                    <svg
+                      viewBox="0 0 60 40"
+                      width="18"
+                      height="12"
+                      aria-hidden="true"
+                      focusable="false"
+                    >
+                      <rect width="60" height="40" fill="#fff" />
+                      <rect width="20" height="40" fill="#0055a4" />
+                      <rect x="40" width="20" height="40" fill="#ef4135" />
+                    </svg>
+                  </span>
                   <span>Français</span>
                 </button>
               </li>
@@ -308,7 +351,37 @@
                   class="lang-option"
                   data-lang="en"
                 >
-                  <span class="lang-flag">🇬🇧</span>
+                  <span class="lang-flag">
+                    <svg
+                      viewBox="0 0 60 40"
+                      width="18"
+                      height="12"
+                      aria-hidden="true"
+                      focusable="false"
+                    >
+                      <rect width="60" height="40" fill="#012169" />
+                      <path
+                        d="M0 0 60 40M60 0 0 40"
+                        stroke="#fff"
+                        stroke-width="8"
+                      />
+                      <path
+                        d="M0 0 60 40M60 0 0 40"
+                        stroke="#c8102e"
+                        stroke-width="4"
+                      />
+                      <path
+                        d="M30 0V40M0 20H60"
+                        stroke="#fff"
+                        stroke-width="12"
+                      />
+                      <path
+                        d="M30 0V40M0 20H60"
+                        stroke="#c8102e"
+                        stroke-width="6"
+                      />
+                    </svg>
+                  </span>
                   <span>English</span>
                 </button>
               </li>
@@ -1117,6 +1190,9 @@ Répondre à : {{reply_to}}</textarea
           >
           <p data-i18n="footer.tagline">
             Un projet pédagogique open source pour apprendre EmailJS.
+          </p>
+          <p class="footer-credit" data-i18n="footer.credit">
+            Conçu et développé par Francis Mampouya.
           </p>
         </div>
         <nav class="footer-nav" aria-label="Plan du site">

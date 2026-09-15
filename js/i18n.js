@@ -124,6 +124,7 @@ const I18N = {
 
     "footer.tagline":
       "Un projet pédagogique open source pour apprendre EmailJS.",
+    "footer.credit": "Conçu et développé par Francis Mampouya.",
     "footer.col.explore": "Explorer",
     "footer.col.practice": "Mettre en pratique",
     "footer.col.resources": "Ressources",
@@ -263,6 +264,7 @@ const I18N = {
     "faq.title": "Frequently asked questions",
 
     "footer.tagline": "An open-source educational project to learn EmailJS.",
+    "footer.credit": "Designed and developed by Francis Mampouya.",
     "footer.col.explore": "Explore",
     "footer.col.practice": "Practice",
     "footer.col.resources": "Resources",
@@ -307,8 +309,6 @@ function setLang(lang) {
 
   const label = document.getElementById("langLabel");
   if (label) label.textContent = lang.toUpperCase();
-  const flag = document.getElementById("langFlag");
-  if (flag) flag.textContent = lang === "en" ? "🇬🇧" : "🇫🇷";
 
   applyLang(lang);
 

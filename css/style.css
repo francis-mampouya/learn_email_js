@@ -363,8 +363,25 @@ code {
   text-decoration: none;
 }
 .nav-link-github {
-  border: 1px solid var(--border);
+  border: 1px solid var(--ink);
+  background: var(--ink);
+  color: #fff;
   margin-left: 0.35rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  transition:
+    background var(--transition),
+    border-color var(--transition),
+    color var(--transition),
+    box-shadow var(--transition);
+}
+.nav-link-github:hover {
+  background: var(--ej-orange-600);
+  border-color: var(--ej-orange-600);
+  color: #fff;
+  box-shadow: var(--shadow-md);
 }
 
 .header-actions {
@@ -413,7 +430,8 @@ code {
 .lang-btn {
   display: inline-flex !important;
   align-items: center;
-  gap: 0.35rem;
+  justify-content: center;
+  gap: 0.4rem;
   padding: 0 0.7rem !important;
   width: auto !important;
   min-width: 68px;
@@ -422,8 +440,29 @@ code {
 }
 
 .lang-flag {
-  font-size: 1rem;
-  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 12px;
+}
+.lang-flag svg {
+  flex-shrink: 0;
+  border-radius: 2px;
+  box-shadow: 0 0 0 1px var(--border);
+}
+#langFlag {
+  width: auto;
+  height: auto;
+}
+#langFlag .flag-en {
+  display: none;
+}
+html[lang="en"] #langFlag .flag-fr {
+  display: none;
+}
+html[lang="en"] #langFlag .flag-en {
+  display: inline-flex;
 }
 
 .lang-code {
@@ -1548,6 +1587,17 @@ code {
   margin-top: 0.5rem;
   line-height: 1.5;
   max-width: 34ch;
+}
+.footer-credit {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 0.8rem;
+  padding-top: 0.8rem;
+  border-top: 1px solid var(--ej-slate-700);
+  font-size: 0.78rem;
+  color: var(--ej-slate-500);
+  letter-spacing: 0.02em;
 }
 .footer-nav {
   display: grid;

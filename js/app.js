@@ -850,12 +850,74 @@ function initLab() {
    CODE
    ========================================================================= */
 
-function initCode() {
-  const tabs = $$(".code-tab");
+function buildHtmlExample() {
+  const form = $("#labForm");
+  const lang = currentLang();
+  const btn = lang === "en" ? "Send" : "Envoyer";
+  const lines = [
+    "<!-- Formulaire HTML minimal -->",
+    '<form id="' + (form ? form.id : "labForm") + '">',
+  ];
+  if (form) {
+    $$("input, textarea", form).forEach((el) => {
+      if (el.tagName === "TEXTAREA") {
+        lines.push(
+          '  <textarea name="' +
+            el.name +
+            '" placeholder="..." rows="4"></textarea>',
+        );
+      } else {
+        const minLen = el.minLength
+          ? ' minlength="' + el.minLength + '"'
+          : "";
+        const req = el.hasAttribute("required") ? " required" : "";
+        lines.push(
+          '  <input type="' +
+            el.type +
+            '" name="' +
+            el.name +
+            '"' +
+            minLen +
+            req +
+            " />",
+        );
+      }
+    });
+  }
+  lines.push("  <button>" + btn + "</button>");
+  lines.push("</form>");
+  return lines.join("\n");
+}
+
+function buildJsExample() {
+  const form = $("#labForm");
+  const id = (form || {}).id || "labForm";
+  const lang = currentLang();
+  const logMsg = lang === "en" ? "Email sent!" : "Email envoyé !";
+  const errMsg = lang === "en" ? "Error:" : "Erreur :";
+  return (
+    '// Initialisation avec la Public Key\n' +
+    "emailjs.init({ publicKey: 'YOUR_PUBLIC_KEY' });\n\n" +
+    "document.getElementById('" + id + "')\n" +
+    "  .addEventListener('submit', async (e) => {\n" +
+    "    e.preventDefault();\n\n" +
+    "    try {\n" +
+    "      const res = await emailjs.sendForm(\n" +
+    "        'YOUR_SERVICE_ID',   // Service ID\n" +
+    "        'YOUR_TEMPLATE_ID',  // Template ID\n" +
+    "        '#" + id + "'\n" +
+    "      );\n" +
+    "      console.log('" + logMsg + "', res.status, res.text);\n" +
+    "    } catch (err) {\n" +
+    "      console.error('" + errMsg + "', err);\n" +
+    "    }\n" +
+    "  });"
+  );
+}
+
+function renderCode() {
   const htmlBlock = $("#codeHtml");
   const jsBlock = $("#codeJs");
-  const filename = $("#codeFilename");
-  const copyBtn = $("#copyBtn");
   if (!htmlBlock || !jsBlock) return;
 
   const esc = (t) =>
@@ -887,8 +949,25 @@ function initCode() {
 
   const htmlCode = htmlBlock.querySelector("code");
   const jsCode = jsBlock.querySelector("code");
-  if (htmlCode) htmlCode.innerHTML = highlightHtml(htmlCode.textContent);
-  if (jsCode) jsCode.innerHTML = highlightJs(jsCode.textContent);
+  if (htmlCode) {
+    htmlCode.textContent = buildHtmlExample();
+    htmlCode.innerHTML = highlightHtml(htmlCode.textContent);
+  }
+  if (jsCode) {
+    jsCode.textContent = buildJsExample();
+    jsCode.innerHTML = highlightJs(jsCode.textContent);
+  }
+}
+
+function initCode() {
+  renderCode();
+
+  const tabs = $$(".code-tab");
+  const htmlBlock = $("#codeHtml");
+  const jsBlock = $("#codeJs");
+  const filename = $("#codeFilename");
+  const copyBtn = $("#copyBtn");
+  if (!htmlBlock || !jsBlock) return;
 
   tabs.forEach((tab) => {
     tab.addEventListener("click", () => {
@@ -1196,6 +1275,7 @@ window.EmailJSLab.reRenderAll = function () {
   renderSteps();
   renderDebug();
   renderFaq();
+  renderCode();
   if (window.EmailJSLab.quiz) window.EmailJSLab.quiz.renderQuiz();
   initScrollReveal();
 };

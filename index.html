@@ -160,7 +160,7 @@
 
     <header class="site-header" id="top">
       <div class="container header-inner">
-        <a href="#top" class="brand" aria-label="EmailJS Lab — accueil">
+        <a href="#" class="brand" aria-label="EmailJS Lab — accueil">
           <span class="brand-mark" aria-hidden="true">
             <svg
               viewBox="0 0 24 24"
@@ -981,38 +981,14 @@ Répondre à : {{reply_to}}</textarea
               class="code-block"
               tabindex="0"
               role="tabpanel"
-            ><code>&lt;!-- Formulaire HTML minimal --&gt;
-&lt;form id="labForm"&gt;
-  &lt;input type="text"  name="from_name" placeholder="Nom" /&gt;
-  &lt;input type="email" name="reply_to"  placeholder="Email" /&gt;
-  &lt;input type="text"  name="subject"   placeholder="Sujet" /&gt;
-  &lt;textarea           name="message"   placeholder="Message"&gt;&lt;/textarea&gt;
-  &lt;button type="submit"&gt;Envoyer&lt;/button&gt;
-&lt;/form&gt;</code></pre>
+            ><code></code></pre>
             <pre
               id="codeJs"
               class="code-block"
               tabindex="0"
               role="tabpanel"
               hidden
-            ><code>// Initialisation d'EmailJS avec la Public Key
-emailjs.init({ publicKey: 'YOUR_PUBLIC_KEY' });
-
-document.getElementById('labForm')
-  .addEventListener('submit', async (e) =&gt; {
-    e.preventDefault();
-
-    try {
-      const res = await emailjs.sendForm(
-        'YOUR_SERVICE_ID',   // Service ID
-        'YOUR_TEMPLATE_ID',  // Template ID
-        '#labForm'
-      );
-      console.log('Email envoyé !', res.status, res.text);
-    } catch (err) {
-      console.error('Erreur :', err);
-    }
-  });</code></pre>
+            ><code></code></pre>
           </div>
         </div>
       </section>
@@ -1143,28 +1119,92 @@ document.getElementById('labForm')
             Un projet pédagogique open source pour apprendre EmailJS.
           </p>
         </div>
-        <nav class="footer-links" aria-label="Liens du pied de page">
-          <a
-            href="https://www.emailjs.com/docs/"
-            target="_blank"
-            rel="noopener noreferrer"
-            data-i18n="footer.docs"
-            >Documentation EmailJS</a
-          >
-          <a
-            href="https://github.com/francis-mampouya/learn_email_js"
-            target="_blank"
-            rel="noopener noreferrer"
-            >GitHub</a
-          >
-          <a
-            href="https://github.com/francis-mampouya/learn_email_js/issues/new"
-            target="_blank"
-            rel="noopener noreferrer"
-            data-i18n="footer.bug"
-            >Signaler un bug</a
-          >
-          <a href="#top" data-i18n="footer.top">Haut de page</a>
+        <nav class="footer-nav" aria-label="Plan du site">
+          <div class="footer-col">
+            <h2 class="footer-col-title" data-i18n="footer.col.explore">
+              Explorer
+            </h2>
+            <ul>
+              <li>
+                <a href="#intro" data-i18n="nav.intro">Introduction</a>
+              </li>
+              <li>
+                <a href="#parcours" data-i18n="nav.path">Parcours</a>
+              </li>
+              <li>
+                <a href="#configuration" data-i18n="nav.config"
+                  >Configuration</a
+                >
+              </li>
+              <li>
+                <a href="#labo" data-i18n="nav.lab">Laboratoire</a>
+              </li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h2 class="footer-col-title" data-i18n="footer.col.practice">
+              Mettre en pratique
+            </h2>
+            <ul>
+              <li>
+                <a href="#historique" data-i18n="nav.history">Historique</a>
+              </li>
+              <li>
+                <a href="#debug" data-i18n="nav.debug">Dépannage</a>
+              </li>
+              <li>
+                <a href="#quiz" data-i18n="nav.quiz">Quiz</a>
+              </li>
+              <li>
+                <a href="#faq" data-i18n="nav.faq">FAQ</a>
+              </li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h2 class="footer-col-title" data-i18n="footer.col.resources">
+              Ressources
+            </h2>
+            <ul>
+              <li>
+                <a
+                  href="https://www.emailjs.com/docs/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  data-i18n="footer.docs"
+                  >Documentation EmailJS</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://www.emailjs.com/docs/sdk/send-form/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  data-i18n="footer.sdk"
+                  >Guide SDK (sendForm)</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://github.com/francis-mampouya/learn_email_js"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >GitHub</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://github.com/francis-mampouya/learn_email_js/issues"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  data-i18n="footer.bug"
+                  >Signaler un bug</a
+                >
+              </li>
+              <li>
+                <a href="#" data-i18n="footer.top">Haut de page</a>
+              </li>
+            </ul>
+          </div>
         </nav>
       </div>
       <p class="footer-legal" data-i18n="footer.legal">

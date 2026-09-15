@@ -1531,7 +1531,7 @@ code {
 .footer-inner {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1.5rem;
+  gap: 2rem;
   margin-bottom: 2rem;
 }
 .footer-brand .brand-text {
@@ -1547,18 +1547,35 @@ code {
   color: var(--ej-slate-400);
   margin-top: 0.5rem;
   line-height: 1.5;
+  max-width: 34ch;
 }
-.footer-links {
-  display: flex;
-  gap: 1.25rem;
-  flex-wrap: wrap;
+.footer-nav {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 1.5rem 2rem;
 }
-.footer-links a {
+.footer-col-title {
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--ej-slate-400);
+  margin: 0 0 0.75rem;
+}
+.footer-col ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 0.5rem;
+}
+.footer-col a {
   color: var(--ej-slate-300);
   font-size: 0.9rem;
+  text-decoration: none;
   transition: color var(--transition);
 }
-.footer-links a:hover {
+.footer-col a:hover {
   color: #fff;
   text-decoration: none;
 }
@@ -1780,8 +1797,8 @@ kbd {
     grid-template-columns: repeat(2, 1fr);
   }
   .footer-inner {
-    grid-template-columns: 1fr auto;
-    align-items: center;
+    grid-template-columns: 1fr 2fr;
+    align-items: start;
   }
   .footer-legal {
     text-align: left;

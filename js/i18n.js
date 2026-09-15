@@ -124,7 +124,11 @@ const I18N = {
 
     "footer.tagline":
       "Un projet pédagogique open source pour apprendre EmailJS.",
+    "footer.col.explore": "Explorer",
+    "footer.col.practice": "Mettre en pratique",
+    "footer.col.resources": "Ressources",
     "footer.docs": "Documentation EmailJS",
+    "footer.sdk": "Guide SDK (sendForm)",
     "footer.bug": "Signaler un bug",
     "footer.top": "Haut de page",
     "footer.legal":
@@ -259,7 +263,11 @@ const I18N = {
     "faq.title": "Frequently asked questions",
 
     "footer.tagline": "An open-source educational project to learn EmailJS.",
+    "footer.col.explore": "Explore",
+    "footer.col.practice": "Practice",
+    "footer.col.resources": "Resources",
     "footer.docs": "EmailJS docs",
+    "footer.sdk": "SDK guide (sendForm)",
     "footer.bug": "Report a bug",
     "footer.top": "Back to top",
     "footer.legal":

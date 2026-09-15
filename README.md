@@ -44,8 +44,6 @@
 
 ## 📂 Structure du projet
 
-## 📂 Structure du projet
-
 ```text
 learn_email_js/
 ├── index.html              # Structure HTML5 principale (UI multilingue)
